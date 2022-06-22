@@ -1,0 +1,13 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Helpline
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-text *ngIf="helpline">
+ <p [innerHTML]="helpline.content.rendered"></p>
+</ion-text>
+</ion-content>

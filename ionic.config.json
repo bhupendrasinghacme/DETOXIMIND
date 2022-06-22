@@ -1,0 +1,7 @@
+{
+  "name": "DETOXIMIND",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

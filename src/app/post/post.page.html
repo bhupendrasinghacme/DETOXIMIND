@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>post</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-text *ngIf = "post_data_all" color="primary">
+    <h2>{{ post_data_all.title.rendered }}</h2>
+    <p [innerHTML]="post_data_all.content.rendered"></p>
+  </ion-text>
+</ion-content>
