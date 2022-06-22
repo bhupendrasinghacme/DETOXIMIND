@@ -23,7 +23,7 @@ async loadingData(){
     spinner:'lines-sharp'
   });
   await loading.present();
-  this.pages_service.getPagesData().subscribe(async item=>{
+  this.pages_service.getPagesData(14158).subscribe(async item=>{
     this.helpline = item;
     console.log("helpline---->>>",this.helpline);
     await loading.dismiss();

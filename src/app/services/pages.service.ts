@@ -13,9 +13,9 @@ export class PagesService {
   };
   constructor(private http: HttpClient) { }
 
-  getPagesData(): Observable<any> {
+  getPagesData(page_id): Observable<any> {
  
-    return this.http.get(environment.wordpress.api_url+"pages/14158").pipe(
+    return this.http.get(environment.wordpress.api_url+"pages/"+page_id).pipe(
       tap(post => console.log('All Post fetched!'))
       // ,
       // catchError(this.handleError<any>('Get All Post', []))
