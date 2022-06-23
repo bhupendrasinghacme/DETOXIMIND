@@ -1,6 +1,15 @@
-ion-text.ion-color.ion-color-primary.md.hydrated h2{
-    text-align: center;
+ion-toolbar {
+    --background: #0F1B41;
+    --color: #FFFAEA;
 }
-ion-text.ion-color.ion-color-primary.md.hydrated p{
-    padding:10px
+
+ion-content{
+--background: #D3E7FF;
+ion-text.md.hydrated p{
+    padding: 0px  15px;
+    text-align: justify;
+    font-family: "Roboto Slab";
+    font-weight: 400;
+    font-style: normal;
+}
 }

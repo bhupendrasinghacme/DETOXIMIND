@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar>
     <ion-title>
       Blog
     </ion-title>
@@ -14,7 +14,7 @@
     <ion-card-content>
       <p [innerHTML]="post.excerpt.rendered"></p>
     </ion-card-content>
-    <ion-item class="ion-activated" detail lines="none" color="secondary">
+    <ion-item class="ion-activated" detail lines="none">
       <ion-label *ngIf="!post.modified">{{post.date | date}}</ion-label><ion-label *ngIf="post.modified">{{post.modified | date}}</ion-label>
       <ion-label class="read-more-label">Read More</ion-label>
     </ion-item>

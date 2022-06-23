@@ -1,12 +1,13 @@
-<ion-header>
+<!-- <ion-header>
 <ion-toolbar color="primary">
   <ion-title>Sign Up</ion-title>
 </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
-
+ 
 <form (ngSubmit)="signup()" [formGroup]="credentials">
+  <h5 class="login-title">Sign Up</h5>
   <div class="input-group">
     <ion-item>
       <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>

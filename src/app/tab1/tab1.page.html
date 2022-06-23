@@ -1,13 +1,17 @@
 <ion-header>
   <ion-toolbar color="custom-primary">
-    <ion-title>
+    <!-- <ion-title>
       Home
-    </ion-title>
+    </ion-title> -->
+    <img class="logo" src="../../assets/Logo.jpg" alt="logo" width="80">
     <ion-icon slot="end" name="log-out" [routerLink] = "['/profile']"></ion-icon>
     <ion-icon slot="end" name="log-out" (click)="logout()"></ion-icon>
   </ion-toolbar>
 </ion-header>
  
 <ion-content>
-
+  <ion-text *ngIf="home_data">
+    
+    <div [innerHTML]="home_data.content.rendered"></div>
+  </ion-text>
 </ion-content>

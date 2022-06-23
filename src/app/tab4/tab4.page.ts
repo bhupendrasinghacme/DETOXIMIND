@@ -25,7 +25,7 @@ async loadingData(){
   await loading.present();
   this.pages_service.getPagesData(14158).subscribe(async item=>{
     this.helpline = item;
-    console.log("helpline---->>>",this.helpline);
+    console.log(this.helpline);
     await loading.dismiss();
     },async err=>{
       console.log(err);

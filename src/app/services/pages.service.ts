@@ -17,8 +17,6 @@ export class PagesService {
  
     return this.http.get(environment.wordpress.api_url+"pages/"+page_id).pipe(
       tap(post => console.log('All Post fetched!'))
-      // ,
-      // catchError(this.handleError<any>('Get All Post', []))
       );
   }
 }

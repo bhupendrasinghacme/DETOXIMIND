@@ -1,4 +1,68 @@
 ion-toolbar {
-    background: #0c1a40;
-    color: #fff;
+    background: #0F1B41;
+    color: #FFFAEA;
+    img.logo {
+        margin-left: 45%;
+    }
+}
+ion-content{
+    --background:#0F1B41;
+    --color: #FFFAEA;
+    line-height: 1.8;
+}
+// ion-text.md.hydrated div {
+//     padding: 0px 13px 0px;
+    
+// }
+::ng-deep figure {
+    margin: 1em 40px;
+    width: 95%;
+}
+::ng-deep .home-deto-section {
+    background: url('../../assets/banner-img.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+::ng-deep .elementor-section {
+    position: relative;
+}
+
+::ng-deep .elementor-widget-container {
+    padding: 20px;
+h1.font_4{
+    text-align: center;
+    padding: 25px 0 0 0;
+    margin-top:0;
+    font-weight: 700;
+    font-family: 'Rozha One', serif !important;
+    font-size: 25px;
+    line-height: 2;
+}
+p{
+    padding: 0 24px 24px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0 0 20px;
+
+}
+}
+::ng-deep .elementor-image-carousel.swiper-wrapper {
+    display: flex;
+}
+::ng-deep .swiper-container {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+::ng-deep h2.font_6 {
+    font-size: 20px;
+    text-align: center;
+}
+::ng-deep .elementor-column-gap-default>.elementor-column>.elementor-element-populated {
+    padding: 10px;
 }

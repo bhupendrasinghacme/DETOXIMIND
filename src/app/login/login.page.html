@@ -1,11 +1,12 @@
-<ion-header>
+<!-- <ion-header>
 <ion-toolbar color="primary">
   <ion-title>Login</ion-title>
 </ion-toolbar>
-</ion-header>
+</ion-header> -->
 <ion-content>
 
 <form (ngSubmit)="login()" [formGroup]="credentials">
+  <h5 class="login-title">Login</h5>
   <div class="input-group">
     <ion-item>
       <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
