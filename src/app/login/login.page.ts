@@ -28,8 +28,12 @@ export class LoginPage implements OnInit {
   }
  
   async login() {
-    const loading = await this.loadingController.create();
-    // await loading.present();
+    const loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: 'Please wait...',
+      spinner:'lines-sharp'
+    });
+    await loading.present();
     let all_data_login = {
       username:this.credentials.value.email,
       password:this.credentials.value.password

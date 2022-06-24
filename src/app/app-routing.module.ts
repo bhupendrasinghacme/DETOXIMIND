@@ -35,6 +35,34 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'testimonial',
+    loadChildren: () => import('./testimonial/testimonial.module').then( m => m.TestimonialPageModule)
+  },
+  {
+    path: 'quiz',
+    loadChildren: () => import('./quiz/quiz.module').then( m => m.QuizPageModule)
+  },
+  {
+    path: 'termsandconditions',
+    loadChildren: () => import('./termsandconditions/termsandconditions.module').then( m => m.TermsandconditionsPageModule)
+  },
+  {
+    path: 'aboutfounder',
+    loadChildren: () => import('./aboutfounder/aboutfounder.module').then( m => m.AboutfounderPageModule)
+  },
+  {
+    path: 'privacypolicy',
+    loadChildren: () => import('./privacypolicy/privacypolicy.module').then( m => m.PrivacypolicyPageModule)
+  },
+  {
+    path: 'whatsisyourstory',
+    loadChildren: () => import('./whatsisyourstory/whatsisyourstory.module').then( m => m.WhatsisyourstoryPageModule)
+  },
+  {
+    path: 'feedback',
+    loadChildren: () => import('./feedback/feedback.module').then( m => m.FeedbackPageModule)
   }
 ];
 @NgModule({

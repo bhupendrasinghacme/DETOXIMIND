@@ -34,7 +34,12 @@ export class SignuppagePage implements OnInit {
   }
 
   async signup(){
-  const loading = await this.loadingController.create();
+    const loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: 'Please wait...',
+      spinner:'lines-sharp'
+    });
+    await loading.present();
   this.httpClient.post("https://detoximinddev.wpengine.com/wp-json/wp/v2/users", JSON.stringify(this.credentials.value), this.httpOptions).subscribe(async item=>{
     //  console.log(item);
     await loading.dismiss();
