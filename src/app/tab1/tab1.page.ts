@@ -58,6 +58,11 @@ export class Tab1Page {
       title: "Feedback",
       url: '/feedback',
       icon: 'person'
+    },
+    {
+      title: "Our Team",
+      url: '/ourteam',
+      icon: 'person'
     }
   ];
   

@@ -19,7 +19,8 @@ ion-content{
     background: url(../../assets/banner-img.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed !important;
+    background-attachment: fixed, scroll;
+    background-repeat: no-repeat, repeat-y;
 }
 ::ng-deep .elementor-section {
     position: relative;
@@ -74,3 +75,10 @@ p{
         line-height: 38px;
         letter-spacing: 1px;
     }
+
+    ::ng-deep  .img-with-txt img {
+            width: 100%;
+            height: auto;
+    }
+
+   
