@@ -12,12 +12,12 @@
   <ion-text *ngIf="home_data">
     <div [innerHTML]="home_data.content.rendered"></div>
   </ion-text>
-  <ion-slides  autoplay="5000" speed="300" pager="true" >
-    <ion-slide loop="true" *ngFor="let item of slides">
+  <ion-slides  speed="300" pager="true" [options]="slideConfig">
+    <ion-slide  *ngFor="let item of slides" >
         <ion-card>
-            <ion-card-content >
-                <ion-img [src] = "item.img"></ion-img>
-        </ion-card-content>
+            <!-- <ion-card-content > -->
+                <img [src] = "item.img" />
+        <!-- </ion-card-content> -->
         </ion-card>
     </ion-slide>
    </ion-slides>

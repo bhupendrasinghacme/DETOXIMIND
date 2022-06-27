@@ -13,7 +13,7 @@ export class Tab1Page {
   home_data: any;
 
   slides = [];
-  slideConfig = { slidesToShow: 4, slidesToScroll: 4 };
+  slideConfig = { slidesToShow: 1,autoplay: true,loop: true };
 
   constructor(
     private authService: AuthenticationService,

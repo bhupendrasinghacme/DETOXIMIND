@@ -48,7 +48,7 @@ export class AppComponent {
       icon: 'person'
     },
     {
-      title: 'About The Founder',
+      title: 'The Founder',
       url: '/aboutfounder',
       icon: 'person'
     },

@@ -83,7 +83,15 @@ p{
     ::ng-deep .elementor-image-carousel-wrapper.swiper-container{
 display: none;
     }
-  
+    .swiper-slide img {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+    } 
+    ion-card.md.hydrated {
+        width: 100%;
+    }  
     
 
    
