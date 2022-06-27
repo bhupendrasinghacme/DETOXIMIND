@@ -12,60 +12,9 @@ import { PagesService } from '../services/pages.service';
 export class Tab1Page {
   home_data: any;
 
-  activePageTitle = 'Home';
-  Pages = [
-    {
-      title: 'Home',
-      url: '',
-      icon: 'albums'
-    },
-    {
-      title: 'Testimonial',
-      url: '/testimonial',
-      icon: 'person'
-    },
-    {
-      title: 'Quiz',
-      url: '/quiz',
-      icon: 'person'
-    },
-    {
-      title: 'Profile',
-      url: '/profile',
-      icon: 'person'
-    },
-    {
-      title: 'Terms & Conditions',
-      url: '/termsandconditions',
-      icon: 'person'
-    },
-    {
-      title: 'PRIVACY & POLICY',
-      url: '/privacypolicy',
-      icon: 'person'
-    },
-    {
-      title: 'About The Founder',
-      url: '/aboutfounder',
-      icon: 'person'
-    },
-    {
-      title: "What's your Story",
-      url: '/whatsisyourstory',
-      icon: 'person'
-    },
-    {
-      title: "Feedback",
-      url: '/feedback',
-      icon: 'person'
-    },
-    {
-      title: "Our Team",
-      url: '/ourteam',
-      icon: 'person'
-    }
-  ];
-  
+  slides = [];
+  slideConfig = { slidesToShow: 4, slidesToScroll: 4 };
+
   constructor(
     private authService: AuthenticationService,
     private router: Router,
@@ -86,6 +35,15 @@ export class Tab1Page {
     this.pagesservice.getPagesData(14220).subscribe(async results => {
       this.home_data = results;
       console.log(results);
+      setTimeout(()=>{
+     
+    document.querySelectorAll(".elementor-image-carousel.swiper-wrapper .swiper-slide figure .swiper-slide-image").forEach(element => {
+      this.slides.push({ img: element.getAttribute('src') })
+    
+    });
+    //  document.querySelector(".sliderItemwrapper").innerHTML = all_slider_data;
+    //  console.log("all_slider_data=>",all_slider_data)
+    },1000);
       await loading.dismiss();
     },
     async (err) => {

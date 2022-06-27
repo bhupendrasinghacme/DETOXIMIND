@@ -80,5 +80,10 @@ p{
             width: 100%;
             height: auto;
     }
+    ::ng-deep .elementor-image-carousel-wrapper.swiper-container{
+display: none;
+    }
+  
+    
 
    

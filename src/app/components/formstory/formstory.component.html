@@ -1,0 +1,42 @@
+<form [formGroup]="ionicForm" (ngSubmit)="submitForm()">
+  <ion-item lines="full">
+    <ion-label position="floating">Name</ion-label>
+    <ion-input type="text" formControlName="name" required></ion-input>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating">Email</ion-label>
+    <ion-input type="email" formControlName="email" required></ion-input>
+  </ion-item>
+  
+  <ion-item lines="full">
+    <ion-label position="floating">School/College</ion-label>
+    <ion-input type="text" formControlName="school"></ion-input>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating">Country</ion-label>
+    <ion-input type="text" formControlName="country"></ion-input>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating">Your story (Max: 1500 words)</ion-label>
+    <ion-textarea type="text"></ion-textarea>
+  </ion-item>
+  <!-- Checkboxes -->
+  <ion-list lines="full">
+    <ion-list-header>
+      <ion-label>Would you like to publish your name or go anonymous? *</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Publish my name</ion-label>
+      <ion-checkbox formControlName="publish_name"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Go Anonymous</ion-label>
+      <ion-checkbox formControlName="go_anonymou"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <ion-row>
+    <ion-col>
+      <ion-button type="submit" color="light" expand="block">Send</ion-button>
+    </ion-col>
+  </ion-row>
+</form>

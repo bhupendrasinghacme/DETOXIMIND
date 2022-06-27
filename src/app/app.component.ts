@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { Network } from '@capacitor/network';
 import { AlertController } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { NavigationEnd , Router } from '@angular/router';
+import { AuthenticationService } from './services/authentication.service';
+import { Platform,MenuController } from '@ionic/angular';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -11,11 +14,89 @@ import { Router } from '@angular/router';
 export class AppComponent {
   networkStatus:boolean = false;
   alert:any;
+  isLoggedIn:boolean = true;
+  activePageTitle = 'Home';
+  Pages = [
+    {
+      title: 'Home',
+      url: '',
+      icon: 'albums'
+    },
+    // {
+    //   title: 'Testimonial',
+    //   url: '/testimonial',
+    //   icon: 'person'
+    // },
+    // {
+    //   title: 'Quiz',
+    //   url: '/quiz',
+    //   icon: 'person'
+    // },
+    {
+      title: 'Profile',
+      url: '/profile',
+      icon: 'person'
+    },
+    {
+      title: 'Terms & Conditions',
+      url: '/termsandconditions',
+      icon: 'person'
+    },
+    {
+      title: 'PRIVACY & POLICY',
+      url: '/privacypolicy',
+      icon: 'person'
+    },
+    {
+      title: 'About The Founder',
+      url: '/aboutfounder',
+      icon: 'person'
+    },
+    {
+      title: "What's your Story",
+      url: '/whatsisyourstory',
+      icon: 'person'
+    },
+    {
+      title: "Feedback",
+      url: '/feedback',
+      icon: 'person'
+    },
+    {
+      title: "Our Team",
+      url: '/ourteam',
+      icon: 'person'
+    }
+  ];
   constructor(
     public alertController: AlertController,
-    public router:Router
+    public router:Router,
+    private authService:AuthenticationService,
+    private menu: MenuController,
+    private platform:Platform,
+    private _location:Location,
+  
     ) {
 
+      this.router.events.subscribe((ev) => {
+        if (ev instanceof NavigationEnd) {
+          const path = window.location.pathname;
+          switch(path){
+              case '/login':
+                // code block
+                this.isLoggedIn=false;
+                break;
+              case '/signuppage':
+                // code block
+                this.isLoggedIn=false;
+                break;
+              default:
+                this.isLoggedIn=true;
+            
+          }
+        }
+      });
+     
     Network.addListener('networkStatusChange', status => {
       if(!status.connected){
         this.networkStatus = true;
@@ -27,7 +108,9 @@ export class AppComponent {
       }
     });
   this.logCurrentNetworkStatus();
+  this.backButtonEvent();
   }
+
   async logCurrentNetworkStatus (){
     const status = await Network.getStatus();
     if(!status.connected){
@@ -38,11 +121,8 @@ export class AppComponent {
     }
 
   };
-  async presentAlert(message) {
-   
-    // await this.alert.dismiss();
-    
 
+  async presentAlert(message) {
 if(!this.networkStatus){
     if(this.alert != undefined){
       await this.alert.dismiss();
@@ -61,6 +141,23 @@ if(!this.networkStatus){
     
     
   }
+  async logout() {
+    this.openEnd();
+    await this.authService.logout();
+    this.router.navigateByUrl('/', { replaceUrl: true });
+  }
+  openEnd() {
+    this.menu.close();
+  }
 
-
+  backButtonEvent(){
+    this.platform.backButton.subscribeWithPriority(10,()=>{
+      const path = window.location.pathname;
+      if(path === '/tabs/home'){
+        navigator['app'].exitApp();
+      } else{
+        this._location.back();
+      }
+    });
+  }
 }
