@@ -2,3 +2,39 @@ ion-toolbar {
     --background: #0F1B41;
     --color: #FFFAEA;
 }
+
+::ng-deep .team-section {
+    .elementor-element-d69e771 {
+        padding: 10px;
+    }
+
+    .team-content {
+        text-align: left;
+
+       
+
+        span {
+            font-size: 14px;
+            color: #fff;
+            line-height: 40px;
+        }
+        h1.font_6 span {
+            font-size: 42px;
+            color: #fff;
+        }
+        span a {
+            background: transparent;
+            border: 1px solid #fff;
+            text-transform: uppercase;
+            font-weight: 800;
+            padding: 10px 20px;
+            margin-top: 20px;
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+}

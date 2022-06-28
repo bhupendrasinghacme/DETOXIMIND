@@ -1,12 +1,15 @@
 <ion-header>
   <ion-toolbar color="custom-primary">
-    <ion-buttons slot="start">
-      <ion-menu-button autoHide="false"></ion-menu-button>
-    </ion-buttons>
+  <div class="header-wrap">
     <img class="logo" src="../../assets/Logo.jpg" alt="logo" width="80">
     <!-- <ion-icon slot="end" name="log-out" [routerLink] = "['/profile']"></ion-icon>
     <ion-icon slot="end" name="log-out" (click)="logout()"></ion-icon> -->
+    <ion-buttons slot="end">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+  </div>
   </ion-toolbar>
+
 </ion-header>
 <ion-content>
   <ion-text *ngIf="home_data">

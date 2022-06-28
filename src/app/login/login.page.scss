@@ -1,16 +1,14 @@
 ion-content {
-    --padding-top: 40%;
+    --padding-top: 20%;
     --padding-start: 10%;
     --padding-end: 10%;
     // --background: linear-gradient(180deg,  #696eff, #f8acff);
     --background: linear-gradient(180deg,  #0F1B41, #0081ca);
     // url('https://images.unsplash.com/photo-1536431311719-398b6704d4cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80') 0 0/100% 100% no-repeat;
     .login-title{
-        color:#FFFAEA;
-        font-weight: 900;
+        color:#000;
         font-size: 20px;
         text-align: center;
-        margin-top: -6px;
         margin-bottom: 15px;
     }
 }
@@ -20,6 +18,7 @@ ion-content {
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 15px;
+    border: 1px solid #000;
 }
  
 .errors {
@@ -32,7 +31,14 @@ ion-content {
 }
 
 form{
-    box-shadow: 3px 7px 26px -3px grey;
+    box-shadow: 3px 7px 0px -3px #fff;
     padding: 20px;
     border-radius: 15px;
+    background: #fff;
+
+    img {
+        max-width: 80px;
+        margin: 0 auto;
+       display: block;
+    }
 }
