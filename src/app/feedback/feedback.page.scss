@@ -7,3 +7,19 @@ display: flex;
 justify-content: center;
 padding-top: 100%;
 }
+::ng-deep .elementor-element.elementor-element-18f501f.success-right-content.elementor-widget.elementor-widget-text-editor {
+    display: none;
+}
+::ng-deep .elementor-element.elementor-element-e764997.elementor-shape-rounded.elementor-grid-0.e-grid-align-center.elementor-widget.elementor-widget-social-icons{
+    display: none;
+}
+
+.main_cls {
+    border: 2px solid red;
+    padding: 0px 17px;
+    margin: 20px;
+}
+
+.main_cls h5 {
+    font-weight: 900;
+}

@@ -1,9 +1,10 @@
 import { AuthenticationService } from './../services/authentication.service';
-import { Component, OnInit } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlertController, LoadingController } from '@ionic/angular';
 import { Router } from '@angular/router';
- 
+// import { MenuController } from '@ionic/angular';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -17,7 +18,8 @@ export class LoginPage implements OnInit {
     private authService: AuthenticationService,
     private alertController: AlertController,
     private router: Router,
-    private loadingController: LoadingController
+    private loadingController: LoadingController,
+    // public menuCtrl: MenuController
   ) {}
  
   ngOnInit() {
@@ -74,5 +76,18 @@ export class LoginPage implements OnInit {
   get password() {
     return this.credentials.get('password');
   }
+
+  // ngAfterContentInit()  {
+  //   this.menuCtrl.enable(false);
+  //   this.menuCtrl.swipeGesture(false);
+  // }
+  // ngAfterViewInit() {
+  //   this.menuCtrl.enable(false);
+  //   this.menuCtrl.swipeGesture(false);
+  // }
+  // ngOnDestroy() {
+  //   this.menuCtrl.enable(true);
+  //   this.menuCtrl.swipeGesture(true);
+  // }
  
 }

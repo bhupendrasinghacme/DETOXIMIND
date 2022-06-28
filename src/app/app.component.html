@@ -1,3 +1,23 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <!-- <ion-router-outlet></ion-router-outlet> -->
+  <!-- <ion-split-pane contentId="main-content"> -->
+    <ion-menu contentId="main-content"  [disabled]="!isLoggedIn" type="overlay">
+      <ion-content>
+        <div class="side-menu-header">
+         <h1>DETOXIMIND</h1>
+        </div>
+        <div id="inbox-list">
+          <ion-menu-toggle auto-hide="false" *ngFor="let pages of Pages; let i = index">
+            <div  (click)="activeIndex = i" routerDirection="root" [routerLink]="[pages.url]" lines="none"
+              detail="false" [class.selected]="activeIndex == i">
+              <h3>{{ pages.title }}</h3>
+          </div>
+          </ion-menu-toggle>
+          <h3 (click)="logout()">Logout</h3>
+        </div>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  <!-- </ion-split-pane> -->
+
 </ion-app>

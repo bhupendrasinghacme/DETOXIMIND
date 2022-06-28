@@ -15,21 +15,14 @@
   <ion-text *ngIf="home_data">
     <div [innerHTML]="home_data.content.rendered"></div>
   </ion-text>
+  <ion-slides  speed="300" pager="true" [options]="slideConfig">
+    <ion-slide  *ngFor="let item of slides" >
+        <ion-card>
+            <!-- <ion-card-content > -->
+                <img [src] = "item.img" />
+        <!-- </ion-card-content> -->
+        </ion-card>
+    </ion-slide>
+   </ion-slides>
   <!-- sidebar----------------------------- -->
-  <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
-      <ion-content>
-        <div id="inbox-list">
-          <ion-menu-toggle auto-hide="false" *ngFor="let pages of Pages; let i = index">
-            <div  (click)="activeIndex = i" routerDirection="root" [routerLink]="[pages.url]" lines="none"
-              detail="false" [class.selected]="activeIndex == i">
-              <h3>{{ pages.title }}</h3>
-          </div>
-          </ion-menu-toggle>
-          <h3 (click)="logout()">Logout</h3>
-        </div>
-      </ion-content>
-    </ion-menu>
-    <ion-router-outlet id="main-content"></ion-router-outlet>
-  </ion-split-pane>
-</ion-content>
+  
