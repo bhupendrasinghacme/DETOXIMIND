@@ -5,6 +5,30 @@ ion-toolbar {
 ::ng-deep section.elementor-section.elementor-inner-section.elementor-element.elementor-element-30d704c.animated-slow.elementor-section-boxed.elementor-section-height-default.elementor-section-height-default.elementor-invisible {
     display: none;
 }
+
+
+::ng-deep .your_story-section {
+   
+    h2 {
+        font-size: 20px;
+        color: #fff;
+        text-align: center;
+    }
+    .story-ques-wrap  p {
+        color: #fff;
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    .elementor-container  {
+        padding: 10px;
+    }
+     img {
+        width: 100%;
+        opacity: 0.6;
+        height: auto;
+    }
+}
 .main_div h1 {
     text-align: center;
+
 }

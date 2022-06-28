@@ -176,11 +176,18 @@ h3 {
         text-decoration: none;
     }
 }
+
 ::ng-deep .homepage-slider {
     padding: 50px 0;
     .img{
         height: 500px;
         object-fit: cover;
         width: 100%;
+    }
+    .elementor-element-764ab0a {
+        display: none;
+    }
+    .elementor-element-bcd7237 {
+        text-align: center;
     }
 }
