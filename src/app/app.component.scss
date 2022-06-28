@@ -1,24 +1,4 @@
-ion-content{
-    --background:#0F1B41;
-    --color: #FFFAEA;
-    line-height: 1.8;
-}
-.side-menu-header{
-    min-height: 10%;
-    border-bottom: 2px solid;
-    display: flex;
-    padding-left: 20px;
-    align-items: center;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-h3 {
-    padding-left: 20px;
-    margin: 0px 7px 0 13px !important;       
-    font-family: "Roboto",Arial,Helvetica,sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 14px;
-    line-height: 38px;
-    letter-spacing: 1px;
+
+::ng-deep ion-content {
+    --background: #0F1B41;
 }

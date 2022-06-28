@@ -2,3 +2,32 @@ ion-toolbar {
     --background: #0F1B41;
     --color: #FFFAEA;
 }
+::ng-deep .founder-section {
+    padding: 10px;
+    .elementor-container {
+        max-width: 820px !important;
+        margin: 0 auto;
+        text-align: center;
+    }
+    h1 {
+        font-size: 30px;
+        line-height: 1;
+        color: #fff;
+    }
+    img {
+        border-radius: 50% 50% 50% 50%;
+        box-shadow: 22px 36px 31px 33px rgb(0 0 0 / 9%);
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        display: block;
+        margin: 20px auto;
+    }
+    p, h4 {
+        color: #fff;
+        line-height: 27px;
+    }
+    h4 {
+        text-transform: uppercase;
+    }
+}

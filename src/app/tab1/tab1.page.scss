@@ -1,12 +1,22 @@
 ion-toolbar {
     background: #0F1B41;
     color: #FFFAEA;
+    height: 105px;
+
     img.logo {
-        margin-left: 35%;
+        width: 110px;
+        margin: 0 auto;
+        display: block;
     }
+
 }
-ion-content{
-    --background:#0F1B41;
+
+.toolbar-container {
+    height: 105px !important;
+}
+
+ion-content {
+    --background: #0F1B41;
     --color: #FFFAEA;
     line-height: 1.8;
 }
@@ -15,6 +25,7 @@ ion-content{
     margin: 1em 40px;
     width: 95%;
 }
+
 ::ng-deep .home-deto-section {
     background: url(../../assets/banner-img.jpg);
     background-repeat: no-repeat;
@@ -22,34 +33,38 @@ ion-content{
     background-attachment: fixed, scroll;
     background-repeat: no-repeat, repeat-y;
 }
+
 ::ng-deep .elementor-section {
     position: relative;
 }
 
 ::ng-deep .elementor-widget-container {
-    padding: 20px;
-h1.font_4{
-    text-align: center;
-    padding: 25px 0 0 0;
-    margin-top:0;
-    font-weight: 700;
-    font-family: 'Rozha One', serif !important;
-    font-size: 25px;
-    line-height: 2;
-}
-p{
-    padding: 0 24px 24px;
-    text-align: center;
-    font-family: 'Roboto', sans-serif !important;
-    font-weight: 400;
-    font-size: 14px;
-    margin: 0 0 20px;
 
+    h1.font_4 {
+        text-align: center;
+        padding: 25px 0 0 0;
+        margin-top: 0;
+        font-weight: 700;
+        font-family: 'Rozha One', serif !important;
+        font-size: 25px;
+        line-height: 2;
+    }
+
+    p {
+        padding: 0;
+        text-align: center;
+        font-family: 'Roboto', sans-serif !important;
+        font-weight: 400;
+        font-size: 14px;
+        margin: 0 0 20px;
+
+    }
 }
-}
+
 ::ng-deep .elementor-image-carousel.swiper-wrapper {
     display: flex;
 }
+
 ::ng-deep .swiper-container {
     margin-left: auto;
     margin-right: auto;
@@ -57,41 +72,115 @@ p{
     overflow: hidden;
     z-index: 1;
 }
+
 ::ng-deep h2.font_6 {
     font-size: 20px;
     text-align: center;
 }
+
 ::ng-deep .elementor-column-gap-default>.elementor-column>.elementor-element-populated {
     padding: 10px;
 }
 
-  h3 {
-        padding-left: 20px;
-        margin: 0px 7px 0 13px !important;       
-        font-family: "Roboto",Arial,Helvetica,sans-serif;
-        font-weight: 600;
-        text-transform: uppercase;
-        font-size: 14px;
-        line-height: 38px;
-        letter-spacing: 1px;
+h3 {
+    padding-left: 20px;
+    margin: 0px 7px 0 13px !important;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 38px;
+    letter-spacing: 1px;
+}
+
+::ng-deep .img-with-txt img {
+    width: 100%;
+    height: auto;
+    opacity: 0.5;
+}
+
+.header-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 105px;
+}
+
+::ng-deep ion-menu {
+    width: 100% !important;
+}
+::ng-deep ion-menu-toggle {
+    cursor: pointer;
+}
+::ng-deep .Detox-right_section .elementor-element-f80d4c1 .elementor-widget-container {
+    padding: 40px 20px;
+}
+
+::ng-deep .img-with-txt .elementor-widget-wrap {
+    position: relative;
+}
+
+::ng-deep .deto-right_content {
+    position: absolute;
+    top: 20%;
+    padding: 20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    h3 {
+        text-align: center;
+    }
+}
+
+::ng-deep .involed-img {
+    position: relative;
+    h2 {
+        font-size: 20px;
+    }
+    img {
+        height: 80vh;
+        object-fit: cover;
+        opacity: 0.5;
     }
 
-    ::ng-deep  .img-with-txt img {
-            width: 100%;
-            height: auto;
-    }
-    ::ng-deep .elementor-image-carousel-wrapper.swiper-container{
-display: none;
-    }
-    .swiper-slide img {
-        width: auto;
+    .elementor-element-289b6ca {
+        position: absolute;
+        right: 0;
+        margin: 0 auto;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        left: 50%;
         max-width: 100%;
-        height: auto;
+        padding: 20px;
         width: 100%;
-    } 
-    ion-card.md.hydrated {
-        width: 100%;
-    }  
-    
+        text-align: center;
+    }
 
-   
+    .elementor-container {
+        height: 80vh;
+        max-width: 100% !important;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+    a {
+        background-color: #fff !important;
+        color: #000;
+        border: 1px solid #fff;
+        text-transform: uppercase;
+        font-weight: 800;
+        padding: 10px 20px;
+        margin-top: 20px;
+        text-decoration: none;
+    }
+}
+::ng-deep .homepage-slider {
+    padding: 50px 0;
+    .img{
+        height: 500px;
+        object-fit: cover;
+        width: 100%;
+    }
+}
