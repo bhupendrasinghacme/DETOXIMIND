@@ -25,6 +25,10 @@ const routes: Routes = [
         loadChildren: () => import('../tab4/tab4.module').then(m => m.Tab4PageModule)
       },
       {
+        path: 'chatroom',
+        loadChildren: () => import('../chatroom/chatroom.module').then( m => m.ChatroomPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'

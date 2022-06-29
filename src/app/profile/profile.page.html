@@ -7,12 +7,12 @@
       <ion-title>Profile</ion-title>
     </ion-toolbar>
   </div>
- <div class="profil-dp-wrapper">
-  <img src="../../assets/profile..png" alt="Profile">
- </div>
-<div class="main-body-profile">
-  <div class="card" *ngIf="profile_view">
-    <h1>Profile</h1>
+  <div class="profil-dp-wrapper">
+    <img src="../../assets/profile..png" alt="Profile">
+  </div>
+  <div class="main-body-profile">
+    <div class="card" *ngIf="profile_view">
+      <h1>Profile</h1>
       <ion-label>bhupendra@gmail.com</ion-label>
       <div class="button-wrapper">
         <div class="edit-pro-btn-wrapper">
@@ -22,54 +22,52 @@
           <ion-button (click)="changeForm()" color="primary">Change Password</ion-button>
         </div>
       </div>
-  </div>
-  <div class="card" *ngIf="edit_form">
-    <div class="close_btn">X</div>
-    <h1>Edit Profile</h1>
-    <ion-item class="cnp_wrapper">
-      <ion-label>User Name</ion-label>
-      <ion-input id="user_name" type="text" placeholder="Enter User Name"> </ion-input>  
-    </ion-item>
-    <ion-item class="cnp_wrapper">
-      <ion-label>Email</ion-label>
-      <ion-input id="email" type="email" placeholder="Enter Email"> </ion-input>  
-    </ion-item>
-    <ion-item class="cnp_wrapper">
-      <ion-label>First Name</ion-label>
-      <ion-input id="first_name" type="text" placeholder="Enter First Name"></ion-input> 
-    </ion-item>
-    <ion-item class="cnp_wrapper">
-      <ion-label>Last Name</ion-label>
-      <ion-input id="last_name" type="text" placeholder="Enter Last Name"></ion-input> 
-    </ion-item>
+    </div>
+    <div class="card" *ngIf="edit_form">
+      <div class="close_btn" (click)="closeEditor()">X</div>
+      <h1>Edit Profile</h1>
+      <form [formGroup]="updateForm" (ngSubmit)="UpadateUser()">
+      <ion-item class="cnp_wrapper">
+        <ion-label>Email:-</ion-label>
+        <ion-input id="email" type="email" placeholder="Enter Email" formControlName="email"> </ion-input>
+      </ion-item>
+      <ion-item class="cnp_wrapper">
+        <ion-label>First Name:-</ion-label>
+        <ion-input id="first_name" type="text" placeholder="Enter First Name" formControlName="first_name"></ion-input>
+      </ion-item>
+      <ion-item class="cnp_wrapper">
+        <ion-label>Last Name:-</ion-label>
+        <ion-input id="last_name" type="text" placeholder="Enter Last Name" formControlName="last_name"></ion-input>
+      </ion-item>
       <div class="button-wrapper">
-          <div class="edit-pro-btn-wrapper">
-            <ion-button (click)="UpadateUser()" color="primary">Update</ion-button>
-          </div>
-          <div class="change-pro-btn-wrapper">
-            <ion-button (click)="changeForm()" color="primary">Change Password</ion-button>
-          </div>
+        <div class="edit-pro-btn-wrapper">
+          <ion-button type="submit" color="primary">Update</ion-button>
+        </div>
+        <div class="change-pro-btn-wrapper">
+          <ion-button (click)="changeForm()" color="primary">Change Password</ion-button>
+        </div>
       </div>
-  </div>
-  <div class="card" *ngIf="change_form">
-    <h1>Change Password</h1>
-    <ion-item class="op_wrapper">
-      <ion-label>Old Password</ion-label>
-      <ion-input id="old_password" type="text" placeholder="Enter New Password"> </ion-input>  
-    </ion-item>
-    <ion-item class="np_wrapper">
-      <ion-label>New Password</ion-label>
-      <ion-input id="new_password" type="password" placeholder="Enter New Password"> </ion-input>  
-    </ion-item>
-    <ion-item class="cnp_wrapper">
-      <ion-label>Confirm New Password</ion-label>
-      <ion-input id="cnp_password" type="password" placeholder="Enter Confirm Password"></ion-input> 
-    </ion-item>
-  
-       <div class="change-password-wrapper">
-          <ion-button (click)="chengePassword()" color="primary">Change Password</ion-button>
-       </div>
+    </form>
+    </div>
+    <div class="card" *ngIf="change_form">
+      <div class="close_btn" (click)="closeEditor()">X</div>
+      <h1>Change Password</h1>
+      <ion-item class="op_wrapper">
+        <ion-label>Old Password:-</ion-label>
+        <ion-input id="old_password" type="text" placeholder="Enter New Password" [(ngModel)]="old_password"> </ion-input>
+      </ion-item>
+      <ion-item class="np_wrapper">
+        <ion-label>New Password:-</ion-label>
+        <ion-input id="new_password" type="password" placeholder="Enter New Password" [(ngModel)]="new_password"> </ion-input>
+      </ion-item>
+      <ion-item class="cnp_wrapper">
+        <ion-label>Confirm New Password:-</ion-label>
+        <ion-input id="cnp_password" type="password" placeholder="Enter Confirm Password" [(ngModel)]="confirmPassword"></ion-input>
+      </ion-item>
 
+      <div class="change-password-wrapper">
+        <ion-button (click)="chengePassword()" color="primary">Change Password</ion-button>
+      </div>
+    </div>
   </div>
-</div>
 </ion-content>

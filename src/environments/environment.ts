@@ -7,6 +7,7 @@ export const environment = {
   wordpress:{
     api_url:"https://detoximinddev.wpengine.com/wp-json/wp/v2/"
   }
+ 
 };
 
 /*

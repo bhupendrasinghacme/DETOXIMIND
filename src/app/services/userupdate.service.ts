@@ -22,22 +22,34 @@ this.getToken();
 
   getUserData(user_id): Observable<any> {
     this.getToken();
-      // this.httpHeader = {
-      //   headers: {
-      //     headers: new HttpHeaders({
-      //       'Content-Type':  'application/json',
-      //       'Authorization': 'Bearer ' + this.token
-      //     })
-      //   }
-      // }
-      let header = new HttpHeaders().set(
-        "Authorization",
-        'Bearer ' + this.token
-      );
+      // let header = new HttpHeaders().set(
+      //   "Authorization",
+      //   'Bearer ' + this.token
+      // );
+      let httpOptions = {
+        headers: new HttpHeaders({ 
+          'Content-Type': 'application/json',
+          'Authorization' : 'Bearer ' + this.token
+        })
+      };
       // console.log(this.httpHeader);
-      return this.http.get(environment.wordpress.api_url+"users/" + user_id,{headers:header}).pipe(
+      return this.http.get(environment.wordpress.api_url+"users/" + user_id,httpOptions).pipe(
       tap(User => console.log('User details fetched!',User))
       );
+  }
+  updateUserProfile(id,data): Observable<any> {
+    this.getToken();
+
+    let httpOptions = {
+      headers: new HttpHeaders({ 
+        'Content-Type': 'application/json',
+        'Authorization' : 'Bearer ' + this.token
+      })
+    };
+    // console.log(this.httpHeader);
+    return this.http.post(environment.wordpress.api_url+"users/" + id,JSON.stringify(data),httpOptions).pipe(
+    tap(User => console.log('User details fetched!',User))
+    );
   }
 
 }

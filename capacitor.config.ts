@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'io.ionic.detoximind',
   appName: 'DETOXIMIND',
   webDir: 'www',
   bundledWebRuntime: false
