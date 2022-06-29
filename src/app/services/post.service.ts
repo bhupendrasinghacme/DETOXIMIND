@@ -14,10 +14,9 @@ export class PostService {
 };
   constructor(private http: HttpClient) { }
 getPostData(page): Observable<any> {
- 
   return this.http.get(environment.wordpress.api_url+"posts?page=" + page).pipe(
-    tap(post => console.log('All Post fetched!'))
-    );
+  tap(post => console.log('All Post fetched!'))
+  );
 }
 
 getOnlyOnePost(id):Observable<any>{

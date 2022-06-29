@@ -30,3 +30,20 @@ img{
 }
  
 }
+.main-body-profile {
+    width: 100%;
+    height: 50%;
+    padding: 0 20px;
+}
+.card {
+    width: 100%;
+    // height: 100%;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 10px 11px 21px #cfc9c9;
+}
+.button-wrapper {
+    display: flex;
+    justify-content: start;
+}
