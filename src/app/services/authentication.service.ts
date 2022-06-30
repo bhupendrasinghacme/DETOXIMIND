@@ -4,7 +4,7 @@ import { map, tap, switchMap } from 'rxjs/operators';
 import { BehaviorSubject, from, Observable, Subject } from 'rxjs';
  
 import { Storage } from '@capacitor/storage';
-import {environment} from '../../environments/environment';
+
  
 const TOKEN_KEY = 'my-token';
  
@@ -55,8 +55,5 @@ export class AuthenticationService {
   getUserData(){
      return Storage.get({key:"user_data"});
    }
-   changePassword(user_id,new_password): Observable<any>{
-    let credentials = {};
-    return this.http.post(`${environment.wordpress.api_url}`, credentials);
-   }
+
 }
