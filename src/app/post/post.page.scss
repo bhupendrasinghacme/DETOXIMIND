@@ -3,13 +3,15 @@ ion-toolbar {
     --color: #FFFAEA;
 }
 
-ion-content{
---background: #D3E7FF;
-ion-text.md.hydrated p{
-    padding: 0px  15px;
-    text-align: justify;
-    font-family: "Roboto Slab";
-    font-weight: 400;
-    font-style: normal;
-}
+ion-content {
+    --background: #D3E7FF;
+    --color: #000000;
+
+    ion-text.md.hydrated p {
+        padding: 0px 15px;
+        text-align: justify;
+        font-family: "Roboto Slab";
+        font-weight: 400;
+        font-style: normal;
+    }
 }
