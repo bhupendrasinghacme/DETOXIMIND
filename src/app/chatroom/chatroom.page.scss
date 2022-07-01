@@ -2,6 +2,9 @@ ion-toolbar {
     --background: #0F1B41;
     --color: #FFFAEA;
 }
+ion-content.ios.overscroll.content-ltr.hydrated {
+  --background: #D3E7FF;
+}
 ::ng-deep .message {
     padding: 10px;
     border-radius: 10px;
@@ -10,7 +13,7 @@ ion-toolbar {
   }
    
   ::ng-deep .my-message {
-    background: lightblue;
+    background: #0F1B41;
     color: #fff;
   }
    

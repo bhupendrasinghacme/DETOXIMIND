@@ -1,0 +1,6 @@
+{
+	"appId": "io.acmeintech.detoximind",
+	"appName": "DETOXIMIND",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

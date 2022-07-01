@@ -7,27 +7,22 @@
 </ion-header>
  
 <ion-content>
- 
   <ion-grid>
-    <ion-row *ngFor="let message of messages">
- 
+    <ion-row *ngFor="let message of messages" >
       <ion-col size="9" *ngIf="message.user !== currentUser" class="message other-message">
         <b>{{ message.user }}</b><br>
         <span>{{ message.msg }}</span>
-        <!-- | date:'short' -->
-        <div class="createdAt" text-right><br>{{ message.createdAt  }}</div>
+        
+        <div class="createdAt" text-right><br>{{ message.createdAt.toDate() | date:'medium'  }}</div>
       </ion-col>
- 
       <ion-col offset="3" size="9" *ngIf="message.user === currentUser" class="message my-message">
         <b>{{ message.user }}</b><br>
         <span>{{ message.msg }}</span>
-        <!-- | date:'short' -->
-        <div class="createdAt" text-right><br>{{ message.createdAt }}</div>
+      
+        <div class="createdAt" text-right><br>{{ message.createdAt.toDate() | date:'medium'}}</div>
       </ion-col>
- 
     </ion-row>
   </ion-grid>
- 
 </ion-content>
  
 <ion-footer>
