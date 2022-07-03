@@ -67,7 +67,11 @@ const routes: Routes = [
   {
     path: 'ourteam',
     loadChildren: () => import('./ourteam/ourteam.module').then( m => m.OurteamPageModule)
+  },  {
+    path: 'audiopost',
+    loadChildren: () => import('./audiopost/audiopost.module').then( m => m.AudiopostPageModule)
   }
+
 ];
 @NgModule({
   imports: [

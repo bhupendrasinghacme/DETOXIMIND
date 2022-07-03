@@ -66,6 +66,11 @@ export class AppComponent {
       title: "Our Team",
       url: '/ourteam',
       icon: 'person'
+    },
+    {
+      title: "Audio Posts",
+      url: '/audiopost',
+      icon: 'person'
     }
   ];
   constructor(

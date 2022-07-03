@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>audiopost</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor = "let audio of audio_data;let indexOfelement=index;">
+      <ion-label>
+        {{audio.title}}
+      </ion-label>
+      <ion-icon (click)="playAudioStop(!mode,audio,indexOfelement)" name="{{mode && indexOfelement == check_btn?'pause':'play'}}" slot="end"></ion-icon>
+    </ion-item>
+
+</ion-list>
+</ion-content>
