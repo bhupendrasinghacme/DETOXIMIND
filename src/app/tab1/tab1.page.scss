@@ -65,13 +65,6 @@ ion-content {
     display: flex;
 }
 
-::ng-deep .swiper-container {
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
 
 ::ng-deep h2.font_6 {
     font-size: 20px;
@@ -178,7 +171,7 @@ h3 {
 }
 
 ::ng-deep .homepage-slider {
-    padding: 50px 0;
+    padding: 30px 0;
     .img{
         height: 500px;
         object-fit: cover;
@@ -190,4 +183,23 @@ h3 {
     .elementor-element-bcd7237 {
         text-align: center;
     }
+   
+}
+.swiper-slide { img {
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+}
+    ion-card {
+        width: 100%;
+    }
+}
+::ng-deep .swiper-container {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin-bottom: 80px;
+    
 }
