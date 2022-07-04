@@ -2,3 +2,12 @@ ion-toolbar {
     --background: #0F1B41;
     --color: #FFFAEA;
 }
+::ng-deep .elementor-element-7139145 {
+    padding: 10px;
+    p {
+        text-align: left;
+    }
+}
+::ng-deep ion-back-button {
+    color: #fff;
+    }
