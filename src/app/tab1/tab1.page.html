@@ -1,28 +1,23 @@
 <ion-header>
   <ion-toolbar color="custom-primary">
-  <div class="header-wrap">
-    <img class="logo" src="../../assets/Logo.jpg" alt="logo" width="80">
-    <!-- <ion-icon slot="end" name="log-out" [routerLink] = "['/profile']"></ion-icon>
-    <ion-icon slot="end" name="log-out" (click)="logout()"></ion-icon> -->
-    <ion-buttons slot="end">
-      <ion-menu-button autoHide="false"></ion-menu-button>
-    </ion-buttons>
-  </div>
+    <div class="header-wrap">
+      <img class="logo" src="../../assets/Logo.jpg" alt="logo" width="80">
+      <ion-buttons slot="end">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+    </div>
   </ion-toolbar>
-
 </ion-header>
 <ion-content>
   <ion-text *ngIf="home_data">
     <div [innerHTML]="home_data.content.rendered"></div>
   </ion-text>
-  <ion-slides  speed="300" pager="true" [options]="slideConfig">
-    <ion-slide  *ngFor="let item of slides" >
-        <ion-card>
-            <!-- <ion-card-content > -->
-                <img [src] = "item.img" />
-        <!-- </ion-card-content> -->
-        </ion-card>
+  <ion-slides speed="300" pager="true" [options]="slideConfig">
+    <ion-slide *ngFor="let e of [].constructor(html_data_length);let index_data = index">
+      <!-- <ion-card> -->
+      <div class="slider_data_append" [innerHTML]="html_data[index_data].outerHTML"></div>
+      <!-- <ion-card-content class="slider_data_append">
+        </ion-card-content> -->
+      <!-- </ion-card> -->
     </ion-slide>
-   </ion-slides>
-  <!-- sidebar----------------------------- -->
-  
+  </ion-slides>
