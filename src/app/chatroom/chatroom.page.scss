@@ -1,0 +1,48 @@
+ion-toolbar {
+  --background: #0F1B41;
+  --color: #FFFAEA;
+}
+
+ion-content.ios.overscroll.content-ltr.hydrated {
+  --background: #D3E7FF;
+}
+
+::ng-deep .message {
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 4px;
+  white-space: pre-wrap;
+}
+
+::ng-deep .my-message {
+  background: #0F1B41;
+  color: #fff;
+}
+
+::ng-deep .other-message {
+  background: palevioletred;
+  color: #fff;
+}
+
+::ng-deep .createdAt {
+  color: #dfdfdf;
+  float: right;
+  font-size: small;
+}
+
+::ng-deep .inputBox {
+  margin-top: 0px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  background: #fff;
+  color: #0F1B41;
+}
+
+::ng-deep .sendBtn {
+  --padding-start: 0.5em;
+  --padding-end: 0.5em;
+}
+
+::ng-deep textarea.native-textarea.sc-ion-textarea-ios {
+  padding-left: 15px;
+}

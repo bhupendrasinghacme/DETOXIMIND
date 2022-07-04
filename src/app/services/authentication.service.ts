@@ -4,7 +4,7 @@ import { map, tap, switchMap } from 'rxjs/operators';
 import { BehaviorSubject, from, Observable, Subject } from 'rxjs';
  
 import { Storage } from '@capacitor/storage';
- 
+
  
 const TOKEN_KEY = 'my-token';
  
@@ -31,7 +31,7 @@ export class AuthenticationService {
   }
  
   login(credentials: {username, password}): Observable<any> {
-    console.log("credentials----->>>>>",credentials);
+    // console.log("credentials----->>>>>",credentials);
     return this.http.post(`https://detoximinddev.wpengine.com/wp-json/jwt-auth/v1/token`, credentials).pipe(
       map((data: any) => {
         this.userData = data.data;
@@ -52,7 +52,8 @@ export class AuthenticationService {
     this.isAuthenticated.next(false);
     return Storage.remove({key: TOKEN_KEY});
   }
-getUserData(){
-return Storage.get({key:"user_data"});
-}
+  getUserData(){
+     return Storage.get({key:"user_data"});
+   }
+
 }

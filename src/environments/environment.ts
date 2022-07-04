@@ -4,9 +4,20 @@
 
 export const environment = {
   production: false,
+  firebase: {
+  apiKey: "AIzaSyAyWO339cN86vxCD0Y4fl91yIuD-Gc-DGA",
+  authDomain: "detoximindchatapp.firebaseapp.com",
+  databaseURL: "https://detoximindchatapp-default-rtdb.firebaseio.com",
+  projectId: "detoximindchatapp",
+  storageBucket: "detoximindchatapp.appspot.com",
+  messagingSenderId: "699416696843",
+  appId: "1:699416696843:web:108c9ef5d5ca5be6964f0e"
+  },
+  
   wordpress:{
-    api_url:"https://detoximinddev.wpengine.com/wp-json/wp/v2/"
-  }
+    api_url:"http://www.detoximind.com/wp-json/wp/v2/"
+  },
+
 };
 
 /*
