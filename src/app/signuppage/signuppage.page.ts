@@ -4,6 +4,7 @@ import { AlertController, LoadingController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { MustMatch } from '../helper/must-match.validator';
 @Component({
   selector: 'app-signuppage',
   templateUrl: './signuppage.page.html',
@@ -29,9 +30,14 @@ export class SignuppagePage implements OnInit {
   ngOnInit() {
     this.credentials = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
+      username: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      username: ['', [Validators.required]]
-    });
+      confirm_password: ['', [Validators.required]]
+    }, {
+      validator: MustMatch('password', 'confirm_password')
+    }
+
+    );
   }
 
   async signup() {
@@ -66,6 +72,9 @@ export class SignuppagePage implements OnInit {
 
   get password() {
     return this.credentials.get('password');
+  }
+  get confirm_password() {
+    return this.credentials.get('confirm_password');
   }
 
 }

@@ -35,7 +35,15 @@
         <span *ngIf="password.errors?.minlength">Password needs to be 6 characters</span>
       </div>
     </div>
-
+    <div class="input-group">
+      <ion-item>
+        <ion-input type="password" placeholder="Confirm Password" formControlName="confirm_password"></ion-input>
+      </ion-item>
+      <div *ngIf="(confirm_password.dirty || confirm_password.touched) && confirm_password.errors" class="errors">
+        <span *ngIf="confirm_password.errors?.required">Confirm Password is required</span>
+        <span *ngIf="confirm_password.errors?.mustMatch">Passwords must match</span>
+      </div>
+    </div>
     <ion-button type="submit" expand="block" [disabled]="!credentials.valid">Sign Up</ion-button>
     <ion-button type="button" expand="block" color="light" fill="clear" [routerLink]="['/login']">Not yet a member? Log
       In

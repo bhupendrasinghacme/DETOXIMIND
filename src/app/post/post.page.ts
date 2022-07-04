@@ -8,33 +8,36 @@ import { LoadingController } from '@ionic/angular';
   styleUrls: ['./post.page.scss'],
 })
 export class PostPage implements OnInit {
-  id:any;
-  post_data_all:any;
+  id: any;
+  post_data_all: any;
   constructor(
-    private route:ActivatedRoute,
-    private post:PostService,
-    private loadingController:LoadingController
-    ) { }
+    private route: ActivatedRoute,
+    private post: PostService,
+    private loadingController: LoadingController
+  ) { }
 
- ngOnInit() {
-  this.fetchData();
+  ngOnInit() {
+    this.fetchData();
   }
 
   async fetchData() {
     const loading = await this.loadingController.create({
       cssClass: 'my-custom-class',
       message: 'Please wait...',
-      spinner:'lines-sharp'
+      spinner: 'lines-sharp'
       // duration: 2000
     });
     await loading.present();
     this.route.params.subscribe(params => {
       this.id = params['id'];
- });
- this.post.getOnlyOnePost(this.id).subscribe(async post=>{
-  this.post_data_all = post;
-  await loading.dismiss();
-  console.log("post_data_all",this.post_data_all);
- });
+    });
+    this.post.getOnlyOnePost(this.id).subscribe(async post => {
+      this.post_data_all = post;
+      await loading.dismiss();
+      console.log("post_data_all", this.post_data_all);
+    }, async error => {
+      await loading.dismiss();
+      console.log(error);
+    });
   }
 }
