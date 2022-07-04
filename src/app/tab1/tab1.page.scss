@@ -102,9 +102,11 @@ h3 {
 ::ng-deep ion-menu {
     width: 100% !important;
 }
+
 ::ng-deep ion-menu-toggle {
     cursor: pointer;
 }
+
 ::ng-deep .Detox-right_section .elementor-element-f80d4c1 .elementor-widget-container {
     padding: 40px 20px;
 }
@@ -128,9 +130,11 @@ h3 {
 
 ::ng-deep .involed-img {
     position: relative;
+
     h2 {
         font-size: 20px;
     }
+
     img {
         height: 80vh;
         object-fit: cover;
@@ -158,6 +162,7 @@ h3 {
     h1 {
         font-size: 35px;
     }
+
     a {
         background-color: #fff !important;
         color: #000;
@@ -172,28 +177,35 @@ h3 {
 
 ::ng-deep .homepage-slider {
     padding: 30px 0;
-    .img{
+
+    .img {
         height: 500px;
         object-fit: cover;
         width: 100%;
     }
+
     .elementor-element-764ab0a {
         display: none;
     }
+
     .elementor-element-bcd7237 {
         text-align: center;
     }
-   
+
 }
-.swiper-slide { img {
-    height: auto;
-    object-fit: cover;
-    width: 100%;
-}
+
+.swiper-slide {
+    img {
+        height: auto;
+        object-fit: cover;
+        width: 100%;
+    }
+
     ion-card {
         width: 100%;
     }
 }
+
 ::ng-deep .swiper-container {
     margin-left: auto;
     margin-right: auto;
@@ -201,5 +213,5 @@ h3 {
     overflow: hidden;
     z-index: 1;
     margin-bottom: 80px;
-    
+
 }

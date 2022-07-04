@@ -11,15 +11,16 @@ import { PagesService } from '../services/pages.service';
 })
 export class Tab1Page {
   home_data: any;
-
+  html_data_length: any = 0;
   slides = [];
-  slideConfig = { slidesToShow: 1,autoplay: true,loop: true };
+  slideConfig = { slidesToShow: 1, autoplay: true, loop: true };
+  html_data: any;
 
   constructor(
     private authService: AuthenticationService,
     private router: Router,
     private pagesservice: PagesService,
-    public loadingController:LoadingController
+    public loadingController: LoadingController
   ) {
     this.fetchData();
   }
@@ -28,29 +29,27 @@ export class Tab1Page {
     const loading = await this.loadingController.create({
       cssClass: 'my-custom-class',
       message: 'Please wait...',
-      spinner:'lines-sharp'
+      spinner: 'lines-sharp'
     });
-   
+
     await loading.present();
     this.pagesservice.getPagesData(14220).subscribe(async results => {
       this.home_data = results;
       console.log(results);
-      setTimeout(()=>{
-     
-    document.querySelectorAll(".elementor-image-carousel.swiper-wrapper .swiper-slide figure .swiper-slide-image").forEach(element => {
-      this.slides.push({ img: element.getAttribute('src') })
-    
-    });
-    //  document.querySelector(".sliderItemwrapper").innerHTML = all_slider_data;
-    //  console.log("all_slider_data=>",all_slider_data)
-    },1000);
+      setTimeout(() => {
+        this.html_data = document.querySelectorAll('.sp-testimonial-item');
+        this.html_data_length = this.html_data.length;
+        // document.querySelectorAll(".elementor-image-carousel.swiper-wrapper .swiper-slide figure .swiper-slide-image").forEach(element => {
+        //   this.slides.push({ img: element.getAttribute('src') })
+        // });
+      }, 1000);
       await loading.dismiss();
     },
-    async (err) => {
-  console.log(err);
-  await loading.dismiss();
-    }
-    
+      async (err) => {
+        console.log(err);
+        await loading.dismiss();
+      }
+
     );
   }
   async logout() {
