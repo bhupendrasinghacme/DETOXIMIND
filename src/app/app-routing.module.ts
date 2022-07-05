@@ -70,6 +70,10 @@ const routes: Routes = [
   },  {
     path: 'audiopost',
     loadChildren: () => import('./audiopost/audiopost.module').then( m => m.AudiopostPageModule)
+  },
+  {
+    path: 'forgetpassword',
+    loadChildren: () => import('./forgetpassword/forgetpassword.module').then( m => m.ForgetpasswordPageModule)
   }
 
 ];

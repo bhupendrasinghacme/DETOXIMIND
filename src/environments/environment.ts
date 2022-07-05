@@ -15,7 +15,7 @@ export const environment = {
   },
 
   wordpress: {
-    api_url: "http://www.detoximind.com/wp-json/wp/v2/"
+    api_url: "http://www.detoximind.com/"
   },
 
 };

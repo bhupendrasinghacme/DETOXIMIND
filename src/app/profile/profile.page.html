@@ -13,7 +13,7 @@
   <div class="main-body-profile">
     <div class="card" *ngIf="profile_view">
       <h1>Profile</h1>
-      <ion-label>bhupendra@gmail.com</ion-label>
+      <ion-label>{{email}}</ion-label>
       <div class="button-wrapper">
         <div class="edit-pro-btn-wrapper">
           <ion-button (click)="editForm()" color="primary">Edit</ion-button>
@@ -29,20 +29,23 @@
       <form [formGroup]="updateForm" (ngSubmit)="UpadateUser()">
         <ion-item class="cnp_wrapper">
           <ion-label>Email:-</ion-label>
-          <ion-input id="email" type="email" placeholder="Enter Email" formControlName="email"> </ion-input>
+          <ion-input id="email" type="email" placeholder="Enter Email" formControlName="email" [(ngModel)]="email">
+          </ion-input>
         </ion-item>
         <ion-item class="cnp_wrapper">
           <ion-label>First Name:-</ion-label>
-          <ion-input id="first_name" type="text" placeholder="Enter First Name" formControlName="first_name">
+          <ion-input id="first_name" type="text" placeholder="Enter First Name" formControlName="first_name"
+            [(ngModel)]="firstname">
           </ion-input>
         </ion-item>
         <ion-item class="cnp_wrapper">
           <ion-label>Last Name:-</ion-label>
-          <ion-input id="last_name" type="text" placeholder="Enter Last Name" formControlName="last_name"></ion-input>
+          <ion-input id="last_name" type="text" placeholder="Enter Last Name" formControlName="last_name"
+            [(ngModel)]="lastname"></ion-input>
         </ion-item>
         <div class="button-wrapper">
           <div class="edit-pro-btn-wrapper">
-            <ion-button type="submit" color="primary">Update</ion-button>
+            <ion-button type="submit" color="primary" [disabled]="!updateForm.valid">Update</ion-button>
           </div>
           <div class="change-pro-btn-wrapper">
             <ion-button (click)="changeForm()" color="primary">Change Password</ion-button>
@@ -78,7 +81,6 @@
           <ion-label>Confirm New Password:-</ion-label>
           <ion-input id="cnp_password" type="password" placeholder="Enter Confirm Password"
             formControlName="confirm_password"></ion-input>
-
           <div *ngIf="(confirm_password.dirty || confirm_password.touched) && confirm_password.errors" class="errors">
             <span *ngIf="confirm_password.errors?.required">Confirm Password is required</span>
             <span *ngIf="confirm_password.errors?.mustMatch">Passwords must match</span>
@@ -86,7 +88,7 @@
         </ion-item>
 
         <div class="change-password-wrapper">
-          <ion-button type="submit" color="primary">Change Password</ion-button>
+          <ion-button type="submit" color="primary" [disabled]="!changeData.valid">Change Password</ion-button>
         </div>
       </form>
     </div>

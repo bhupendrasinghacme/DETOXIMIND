@@ -20,7 +20,7 @@ export class PostService {
         'Authorization': 'Bearer ' + this.token
       })
     };
-    return this.http.get(environment.wordpress.api_url + "posts?page=" + page).pipe(
+    return this.http.get(environment.wordpress.api_url + "wp-json/wp/v2/posts?page=" + page).pipe(
       tap(post => console.log('All Post fetched!'))
     );
   }
@@ -32,7 +32,7 @@ export class PostService {
         'Authorization': 'Bearer ' + this.token
       })
     };
-    return this.http.get(environment.wordpress.api_url + "posts/" + id).pipe(
+    return this.http.get(environment.wordpress.api_url + "wp-json/wp/v2/posts/" + id).pipe(
       tap(post => console.log('All Post fetched!'))
     );
   }

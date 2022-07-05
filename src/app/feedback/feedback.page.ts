@@ -8,13 +8,13 @@ import { PagesService } from '../services/pages.service';
   styleUrls: ['./feedback.page.scss'],
 })
 export class FeedbackPage implements OnInit {
-  feedbacK_data:any;
+  feedbacK_data: any;
   constructor(
-    private pagesservice:PagesService,
-    private loadingController:LoadingController
+    private pagesservice: PagesService,
+    private loadingController: LoadingController
   ) {
     this.fetchData();
-   }
+  }
 
   ngOnInit() {
   }
@@ -22,18 +22,18 @@ export class FeedbackPage implements OnInit {
     const loading = await this.loadingController.create({
       cssClass: 'my-custom-class',
       message: 'Please wait...',
-      spinner:'lines-sharp'
+      spinner: 'lines-sharp'
     });
-    
+
     await loading.present();
     this.pagesservice.getPagesData(14280).subscribe(async results => {
       this.feedbacK_data = results;
       console.log(results);
       await loading.dismiss();
     },
-    async (err) => {
-    console.log(err);
-    await loading.dismiss();
-    });
+      async (err) => {
+        console.log(err);
+        await loading.dismiss();
+      });
   }
 }

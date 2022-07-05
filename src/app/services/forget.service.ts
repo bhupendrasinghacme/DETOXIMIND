@@ -3,31 +3,25 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
-import { Storage } from '@capacitor/storage';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PagesService {
-  token: any;
+export class ForgetService {
+
   constructor(private http: HttpClient) {
-    this.getToken();
 
   }
-  async getToken() {
-    let token_id = await Storage.get({ key: 'my-token' });
-    this.token = token_id.value;
-  }
 
-  getPagesData(page_id): Observable<any> {
+  sendEmailCode(credentials, token): Observable<any> {
     let httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + this.token
+        'Authorization': 'Bearer ' + token
       })
     };
-    return this.http.get(environment.wordpress.api_url + "wp-json/wp/v2/pages/" + page_id).pipe(
-      tap(post => console.log('All Post fetched!'))
-    );
+
+    return this.http.post(`${environment.wordpress.api_url}/wp-json/bdpwr/v1/reset-password`, credentials, httpOptions);
   }
+
 }

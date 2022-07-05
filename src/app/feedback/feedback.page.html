@@ -10,9 +10,9 @@
 <ion-content>
   <ion-text *ngIf="feedbacK_data">
     <div [innerHTML]="feedbacK_data.content.rendered"></div>
-    </ion-text>
-    <div class="main_cls">
-      <h5>How Has Detoximind Helped You Become A Better Version Of Yourself?</h5>
-      <app-formstory></app-formstory>
-    </div>
+  </ion-text>
+  <div class="main_cls" *ngIf="feedbacK_data">
+    <h5>How Has Detoximind Helped You Become A Better Version Of Yourself?</h5>
+    <app-formstory></app-formstory>
+  </div>
 </ion-content>

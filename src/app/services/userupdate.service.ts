@@ -33,7 +33,7 @@ export class UserupdateService {
       })
     };
     // console.log(this.httpHeader);
-    return this.http.get(environment.wordpress.api_url + "users/" + user_id, httpOptions).pipe(
+    return this.http.get(environment.wordpress.api_url + "wp-json/wp/v2/users/" + user_id, httpOptions).pipe(
       tap(User => console.log('User details fetched!', User))
     );
   }
@@ -47,7 +47,7 @@ export class UserupdateService {
       })
     };
     // console.log(this.httpHeader);
-    return this.http.post(environment.wordpress.api_url + "users/" + id, JSON.stringify(data), httpOptions).pipe(
+    return this.http.post(environment.wordpress.api_url + "wp-json/wp/v2/users/" + id, JSON.stringify(data), httpOptions).pipe(
       tap(User => console.log('User details fetched!', User))
     );
   }

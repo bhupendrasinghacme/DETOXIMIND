@@ -18,9 +18,9 @@ export class ProfilePage implements OnInit {
   change_form: boolean = false;
   profile_view: boolean = true;
   // username: string;
-  // email: string;
-  // firstname: string;
-  // lastname: string;
+  email: string;
+  firstname: string;
+  lastname: string;
   // old_password: string;
   // new_password: string;
   // confirmPassword: string;
@@ -49,9 +49,11 @@ export class ProfilePage implements OnInit {
     );
     this.authService.getUserData().then(item => {
       this.user_Data = JSON.parse(item.value);
-      this.userupdateService.getUserData(this.user_Data.id).subscribe(item => {
-        // console.log("user data new------>",item);
-      });
+      // this.userupdateService.getUserData(this.user_Data.id).subscribe(item => {
+      this.email = this.user_Data.email;
+      this.firstname = this.user_Data.firstName;
+      this.lastname = this.user_Data.lastName;
+      // });
     })
   }
   editForm() {
@@ -95,6 +97,11 @@ export class ProfilePage implements OnInit {
       console.log("item=====>", item);
       await loading.dismiss();
       this.presentToast("User Successfully Updated.");
+
+      this.user_Data.email = item.email;
+      this.user_Data.firstName = item.first_name;
+      this.user_Data.lastName = item.last_name;
+      this.authService.updateUserData(this.user_Data);
       this.closeEditor();
     }, async error => {
       await loading.dismiss();

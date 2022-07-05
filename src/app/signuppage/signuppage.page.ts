@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { MustMatch } from '../helper/must-match.validator';
+import { AuthenticationService } from '../services/authentication.service';
+
 @Component({
   selector: 'app-signuppage',
   templateUrl: './signuppage.page.html',
@@ -13,17 +15,14 @@ import { MustMatch } from '../helper/must-match.validator';
 
 export class SignuppagePage implements OnInit {
   credentials: FormGroup;
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvd3d3LmRldG94aW1pbmQuY29tIiwiaWF0IjoxNjU2NTk1ODAxLCJuYmYiOjE2NTY1OTU4MDEsImV4cCI6MTY1NzIwMDYwMSwiZGF0YSI6eyJ1c2VyIjp7ImlkIjo0LCJkZXZpY2UiOiIiLCJwYXNzIjoiZTE4ZTA4NDE4MjVkYjkwNmJjMDEzMmM5YzBlZDEzMWQifX19.-uQAiXFTPGDrCeeajKhZB52kPR3RyM9J5a6qVBfbkhI'
-    })
-  };
+
+  token: any;
   constructor(
     private fb: FormBuilder,
     private alertController: AlertController,
     private router: Router,
     private loadingController: LoadingController,
+    private authService: AuthenticationService,
     public httpClient: HttpClient
   ) { }
 
@@ -38,16 +37,25 @@ export class SignuppagePage implements OnInit {
     }
 
     );
+    this.authService.getAdminToken().subscribe(item => {
+      this.token = item['data']['token'];
+    })
   }
 
   async signup() {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    };
     const loading = await this.loadingController.create({
       cssClass: 'my-custom-class',
       message: 'Please wait...',
       spinner: 'lines-sharp'
     });
     await loading.present();
-    this.httpClient.post(environment.wordpress.api_url + "users", JSON.stringify(this.credentials.value), this.httpOptions).subscribe(async item => {
+    this.httpClient.post(environment.wordpress.api_url + "wp-json/wp/v2/users", JSON.stringify(this.credentials.value), httpOptions).subscribe(async item => {
       //  console.log(item);
       await loading.dismiss();
       this.presentDataAlert("User Resistered Successfully.");
