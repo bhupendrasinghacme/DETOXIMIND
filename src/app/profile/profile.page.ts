@@ -21,6 +21,8 @@ export class ProfilePage implements OnInit {
   email: string;
   firstname: string;
   lastname: string;
+  imageData: any;
+  adminToke: any;
   // old_password: string;
   // new_password: string;
   // confirmPassword: string;
@@ -55,6 +57,11 @@ export class ProfilePage implements OnInit {
       this.lastname = this.user_Data.lastName;
       // });
     })
+
+
+    // this.authService.getAdminToken().subscribe(item => {
+    //   this.adminToke = item['data']['token'];
+    // })
   }
   editForm() {
     this.change_form = false;
@@ -108,6 +115,17 @@ export class ProfilePage implements OnInit {
       console.log(error);
     })
   }
+
+
+  // uploadFile(event) {
+  //   let data = {
+  //     "source_url": event.target.value
+  //   }
+
+  //   this.userupdateService.uploadMedia(data, this.adminToke).subscribe(item => {
+  //     console.log(item);
+  //   })
+  // }
 
   closeEditor() {
     this.edit_form = false;

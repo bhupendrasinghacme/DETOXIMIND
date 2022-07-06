@@ -182,16 +182,22 @@ h3 {
 ::ng-deep .elementor-element.elementor-element-2a52f44.elementor-widget.elementor-widget-text-editor {
     display: none;
 }
-::ng-deep .elementor-element-b023c21  {
+
+::ng-deep .elementor-element-b023c21 {
     h2 {
         text-align: center;
         font-size: 30px;
         text-transform: uppercase;
         letter-spacing: 2.6px;
         color: #FFFFFF;
-    
+
     }
 }
+
 ::ng-deep ion-slides .sp-testimonial-content {
     padding: 10px;
 }
+
+// ion-slides {
+//     height: 100%;
+// }

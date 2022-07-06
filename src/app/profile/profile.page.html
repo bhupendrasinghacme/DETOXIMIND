@@ -10,6 +10,9 @@
   <div class="profil-dp-wrapper">
     <img src="../../assets/profile..png" alt="Profile">
   </div>
+  <!-- <ion-item class="cnp_wrapper">
+    <ion-input id="image" type="file" [(ngModel)]="imageData" (change)="uploadFile($event)"></ion-input>
+  </ion-item> -->
   <div class="main-body-profile">
     <div class="card" *ngIf="profile_view">
       <h1>Profile</h1>
@@ -28,21 +31,22 @@
       <h1>Edit Profile</h1>
       <form [formGroup]="updateForm" (ngSubmit)="UpadateUser()">
         <ion-item class="cnp_wrapper">
-          <ion-label>Email:-</ion-label>
+          <ion-label position="floating">Email:-</ion-label>
           <ion-input id="email" type="email" placeholder="Enter Email" formControlName="email" [(ngModel)]="email">
           </ion-input>
         </ion-item>
         <ion-item class="cnp_wrapper">
-          <ion-label>First Name:-</ion-label>
+          <ion-label position="floating">First Name:-</ion-label>
           <ion-input id="first_name" type="text" placeholder="Enter First Name" formControlName="first_name"
             [(ngModel)]="firstname">
           </ion-input>
         </ion-item>
         <ion-item class="cnp_wrapper">
-          <ion-label>Last Name:-</ion-label>
+          <ion-label position="floating">Last Name:-</ion-label>
           <ion-input id="last_name" type="text" placeholder="Enter Last Name" formControlName="last_name"
             [(ngModel)]="lastname"></ion-input>
         </ion-item>
+
         <div class="button-wrapper">
           <div class="edit-pro-btn-wrapper">
             <ion-button type="submit" color="primary" [disabled]="!updateForm.valid">Update</ion-button>
@@ -58,7 +62,7 @@
       <h1>Change Password</h1>
       <form [formGroup]="changeData" (ngSubmit)="chengePassword()">
         <ion-item class="op_wrapper">
-          <ion-label>Old Password:-</ion-label>
+          <ion-label position="floating">Old Password:-</ion-label>
           <ion-input id="old_password" type="text" placeholder="Enter New Password" formControlName="old_password">
           </ion-input>
 
@@ -68,17 +72,17 @@
           </div>
         </ion-item>
         <ion-item class="np_wrapper">
-          <ion-label>New Password:-</ion-label>
+          <ion-label position="floating">New Password:-</ion-label>
           <ion-input id="new_password" type="password" placeholder="Enter New Password" formControlName="new_password">
-
-            <div *ngIf="(new_password.dirty || new_password.touched) && new_password.errors" class="errors">
-              <span *ngIf="new_password.errors?.required">New Password is required</span>
-              <span *ngIf="new_password.errors?.minlength">New Password needs to be 6 characters</span>
-            </div>
           </ion-input>
+          <div *ngIf="(new_password.dirty || new_password.touched) && new_password.errors" class="errors">
+            <span *ngIf="new_password.errors?.required">New Password is required</span>
+            <span *ngIf="new_password.errors?.minlength">New Password needs to be 6 characters</span>
+          </div>
+
         </ion-item>
         <ion-item class="cnp_wrapper">
-          <ion-label>Confirm New Password:-</ion-label>
+          <ion-label position="floating">Confirm New Password:-</ion-label>
           <ion-input id="cnp_password" type="password" placeholder="Enter Confirm Password"
             formControlName="confirm_password"></ion-input>
           <div *ngIf="(confirm_password.dirty || confirm_password.touched) && confirm_password.errors" class="errors">

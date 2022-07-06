@@ -32,7 +32,22 @@ export class PostService {
         'Authorization': 'Bearer ' + this.token
       })
     };
+
     return this.http.get(environment.wordpress.api_url + "wp-json/wp/v2/posts/" + id).pipe(
+      tap(post => console.log('All Post fetched!'))
+    );
+  }
+
+
+  askQuestion(data, token): Observable<any> {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      })
+    };
+
+    return this.http.post(environment.wordpress.api_url + "wp-json/wp/v2/askmebuddy/form", JSON.stringify(data), httpOptions).pipe(
       tap(post => console.log('All Post fetched!'))
     );
   }

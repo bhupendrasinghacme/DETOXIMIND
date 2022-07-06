@@ -52,4 +52,18 @@ export class UserupdateService {
     );
   }
 
+  uploadMedia(data, token) {
+    this.getToken();
+
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token,
+        'Content-Disposition': 'attachment; filename="file.jpg"',
+      })
+    };
+
+    return this.http.post(environment.wordpress.api_url + 'wp-json/wp/v2/media', JSON.stringify(data), httpOptions)
+  }
+
 }

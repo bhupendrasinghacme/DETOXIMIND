@@ -13,7 +13,10 @@ export class Tab1Page {
   home_data: any;
   html_data_length: any = 0;
   slides = [];
-  slideConfig = { slidesToShow: 1, autoplay: true, loop: true };
+  slideConfig = {
+    slidesToShow: 1, autoplay: true, loop: true
+
+  };
   html_data: any;
 
   constructor(

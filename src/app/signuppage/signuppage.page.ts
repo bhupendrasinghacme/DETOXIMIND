@@ -59,6 +59,11 @@ export class SignuppagePage implements OnInit {
       //  console.log(item);
       await loading.dismiss();
       this.presentDataAlert("User Resistered Successfully.");
+    }, async error => {
+      if (error.error.message) {
+        await loading.dismiss();
+        this.presentDataAlert(error.error.message);
+      }
     })
   }
   async presentDataAlert(errorMessage) {
