@@ -24,4 +24,15 @@ export class ForgetService {
     return this.http.post(`${environment.wordpress.api_url}/wp-json/bdpwr/v1/reset-password`, credentials, httpOptions);
   }
 
+  forgetPasswordCode(credentials, token): Observable<any> {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      })
+    };
+
+    return this.http.post(`${environment.wordpress.api_url}/wp-json/bdpwr/v1/set-password`, credentials, httpOptions);
+  }
+
 }
