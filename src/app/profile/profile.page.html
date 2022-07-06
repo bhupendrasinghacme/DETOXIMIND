@@ -13,7 +13,7 @@
   <div class="main-body-profile">
     <div class="card" *ngIf="profile_view">
       <h1>Profile</h1>
-      <ion-label>bhupendra@gmail.com</ion-label>
+      <ion-label>{{email}}</ion-label>
       <div class="button-wrapper">
         <div class="edit-pro-btn-wrapper">
           <ion-button (click)="editForm()" color="primary">Edit</ion-button>
@@ -27,47 +27,70 @@
       <div class="close_btn" (click)="closeEditor()">X</div>
       <h1>Edit Profile</h1>
       <form [formGroup]="updateForm" (ngSubmit)="UpadateUser()">
-      <ion-item class="cnp_wrapper">
-        <ion-label>Email:-</ion-label>
-        <ion-input id="email" type="email" placeholder="Enter Email" formControlName="email"> </ion-input>
-      </ion-item>
-      <ion-item class="cnp_wrapper">
-        <ion-label>First Name:-</ion-label>
-        <ion-input id="first_name" type="text" placeholder="Enter First Name" formControlName="first_name"></ion-input>
-      </ion-item>
-      <ion-item class="cnp_wrapper">
-        <ion-label>Last Name:-</ion-label>
-        <ion-input id="last_name" type="text" placeholder="Enter Last Name" formControlName="last_name"></ion-input>
-      </ion-item>
-      <div class="button-wrapper">
-        <div class="edit-pro-btn-wrapper">
-          <ion-button type="submit" color="primary">Update</ion-button>
+        <ion-item class="cnp_wrapper">
+          <ion-label>Email:-</ion-label>
+          <ion-input id="email" type="email" placeholder="Enter Email" formControlName="email" [(ngModel)]="email">
+          </ion-input>
+        </ion-item>
+        <ion-item class="cnp_wrapper">
+          <ion-label>First Name:-</ion-label>
+          <ion-input id="first_name" type="text" placeholder="Enter First Name" formControlName="first_name"
+            [(ngModel)]="firstname">
+          </ion-input>
+        </ion-item>
+        <ion-item class="cnp_wrapper">
+          <ion-label>Last Name:-</ion-label>
+          <ion-input id="last_name" type="text" placeholder="Enter Last Name" formControlName="last_name"
+            [(ngModel)]="lastname"></ion-input>
+        </ion-item>
+        <div class="button-wrapper">
+          <div class="edit-pro-btn-wrapper">
+            <ion-button type="submit" color="primary" [disabled]="!updateForm.valid">Update</ion-button>
+          </div>
+          <div class="change-pro-btn-wrapper">
+            <ion-button (click)="changeForm()" color="primary">Change Password</ion-button>
+          </div>
         </div>
-        <div class="change-pro-btn-wrapper">
-          <ion-button (click)="changeForm()" color="primary">Change Password</ion-button>
-        </div>
-      </div>
-    </form>
+      </form>
     </div>
     <div class="card" *ngIf="change_form">
       <div class="close_btn" (click)="closeEditor()">X</div>
       <h1>Change Password</h1>
-      <ion-item class="op_wrapper">
-        <ion-label>Old Password:-</ion-label>
-        <ion-input id="old_password" type="text" placeholder="Enter New Password" [(ngModel)]="old_password"> </ion-input>
-      </ion-item>
-      <ion-item class="np_wrapper">
-        <ion-label>New Password:-</ion-label>
-        <ion-input id="new_password" type="password" placeholder="Enter New Password" [(ngModel)]="new_password"> </ion-input>
-      </ion-item>
-      <ion-item class="cnp_wrapper">
-        <ion-label>Confirm New Password:-</ion-label>
-        <ion-input id="cnp_password" type="password" placeholder="Enter Confirm Password" [(ngModel)]="confirmPassword"></ion-input>
-      </ion-item>
+      <form [formGroup]="changeData" (ngSubmit)="chengePassword()">
+        <ion-item class="op_wrapper">
+          <ion-label>Old Password:-</ion-label>
+          <ion-input id="old_password" type="text" placeholder="Enter New Password" formControlName="old_password">
+          </ion-input>
 
-      <div class="change-password-wrapper">
-        <ion-button (click)="chengePassword()" color="primary">Change Password</ion-button>
-      </div>
+          <div *ngIf="(old_password.dirty || old_password.touched) && old_password.errors" class="errors">
+            <span *ngIf="old_password.errors?.required">Old Password is required</span>
+            <!-- <span *ngIf="old_password.errors?.minlength">New Password needs to be 6 characters</span> -->
+          </div>
+        </ion-item>
+        <ion-item class="np_wrapper">
+          <ion-label>New Password:-</ion-label>
+          <ion-input id="new_password" type="password" placeholder="Enter New Password" formControlName="new_password">
+
+            <div *ngIf="(new_password.dirty || new_password.touched) && new_password.errors" class="errors">
+              <span *ngIf="new_password.errors?.required">New Password is required</span>
+              <span *ngIf="new_password.errors?.minlength">New Password needs to be 6 characters</span>
+            </div>
+          </ion-input>
+        </ion-item>
+        <ion-item class="cnp_wrapper">
+          <ion-label>Confirm New Password:-</ion-label>
+          <ion-input id="cnp_password" type="password" placeholder="Enter Confirm Password"
+            formControlName="confirm_password"></ion-input>
+          <div *ngIf="(confirm_password.dirty || confirm_password.touched) && confirm_password.errors" class="errors">
+            <span *ngIf="confirm_password.errors?.required">Confirm Password is required</span>
+            <span *ngIf="confirm_password.errors?.mustMatch">Passwords must match</span>
+          </div>
+        </ion-item>
+
+        <div class="change-password-wrapper">
+          <ion-button type="submit" color="primary" [disabled]="!changeData.valid">Change Password</ion-button>
+        </div>
+      </form>
     </div>
   </div>
 </ion-content>

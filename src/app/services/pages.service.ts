@@ -26,7 +26,7 @@ export class PagesService {
         'Authorization': 'Bearer ' + this.token
       })
     };
-    return this.http.get(environment.wordpress.api_url + "pages/" + page_id).pipe(
+    return this.http.get(environment.wordpress.api_url + "wp-json/wp/v2/pages/" + page_id).pipe(
       tap(post => console.log('All Post fetched!'))
     );
   }

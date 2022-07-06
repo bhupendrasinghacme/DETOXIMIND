@@ -66,11 +66,6 @@ export class AppComponent {
       title: "Our Team",
       url: '/ourteam',
       icon: 'person'
-    },
-    {
-      title: "Audio Posts",
-      url: '/audiopost',
-      icon: 'person'
     }
   ];
   constructor(
@@ -143,8 +138,6 @@ export class AppComponent {
       });
       await this.alert.present();
     }
-
-
   }
   async logout() {
     this.openEnd();
