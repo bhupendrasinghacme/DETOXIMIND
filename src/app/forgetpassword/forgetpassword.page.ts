@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../services/authentication.service';
 import { ForgetService } from '../services/forget.service';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-forgetpassword',
@@ -8,12 +9,13 @@ import { ForgetService } from '../services/forget.service';
   styleUrls: ['./forgetpassword.page.scss'],
 })
 export class ForgetpasswordPage implements OnInit {
-  sendEmail: boolean = true;
+  sendEmail: boolean = false;
   email1: any = '';
   token: any;
   constructor(
     private forgetApi: ForgetService,
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
+    public toastController: ToastController
   ) { }
 
   ngOnInit() {
@@ -26,6 +28,13 @@ export class ForgetpasswordPage implements OnInit {
       console.log(item);
       this.sendEmail = false;
     })
+  }
+  async presentToast(msg) {
+    const toast = await this.toastController.create({
+      message: msg,
+      duration: 2000
+    });
+    toast.present();
   }
 
 }
