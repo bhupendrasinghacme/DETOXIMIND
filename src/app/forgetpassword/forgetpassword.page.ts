@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MustMatch } from '../helper/must-match.validator';
 import { LoadingController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 @Component({
   selector: 'app-forgetpassword',
   templateUrl: './forgetpassword.page.html',
@@ -20,7 +21,8 @@ export class ForgetpasswordPage implements OnInit {
     private authService: AuthenticationService,
     private fb: FormBuilder,
     public loadingController: LoadingController,
-    public router: Router
+    public router: Router,
+    public toastController: ToastController
   ) { }
 
   ngOnInit() {
