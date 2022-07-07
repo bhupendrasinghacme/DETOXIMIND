@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { PostService } from '../services/post.service';
 import { LoadingController } from '@ionic/angular';
-import { element } from 'protractor';
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
@@ -43,6 +42,7 @@ export class Tab3Page {
     await loading.present();
     this.post.getAllCategories().subscribe(async item => {
       this.Categories_data = item;
+      console.log(item)
       await loading.dismiss();
       setTimeout(() => {
         document.getElementById("default_clicked").click();

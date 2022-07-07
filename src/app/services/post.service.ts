@@ -54,15 +54,14 @@ export class PostService {
     );
   }
 
-  askQuestionAnswer(token) {
+  askQuestionAnswer(email): Observable<any> {
     let httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + this.token
+        "Content-Type": "application/json"
       })
     };
-    return this.http.get(environment.wordpress.api_url + "wp-json/wp/v2/askmebuddy/email?email=bhupendrasingh@acmeintech.in").pipe(
-      tap(post => console.log('All Answer fetched!'))
+    return this.http.get(environment.wordpress.api_url + "wp-json/wp/v2/askmebuddy/email?email=" + email, httpOptions).pipe(
+      tap(data => console.log("get dataanswer"))
     );
   }
 
