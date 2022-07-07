@@ -13,14 +13,16 @@ export class PostService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
   constructor(private http: HttpClient) { }
-  getPostData(page): Observable<any> {
-    let httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + this.token
-      })
-    };
-    return this.http.get(environment.wordpress.api_url + "wp-json/wp/v2/posts?page=" + page).pipe(
+
+
+  getAllCategories(): Observable<any> {
+    return this.http.get(environment.wordpress.api_url + 'wp-json/wp/v2/categories').pipe(
+      tap(post => console.log('All category fetched!'))
+    );
+  }
+
+  getPostDataPage(category_id, page): Observable<any> {
+    return this.http.get(environment.wordpress.api_url + "wp-json/wp/v2/posts?categories=" + category_id + "&page=" + page).pipe(
       tap(post => console.log('All Post fetched!'))
     );
   }
@@ -49,6 +51,18 @@ export class PostService {
 
     return this.http.post(environment.wordpress.api_url + "wp-json/wp/v2/askmebuddy/form", JSON.stringify(data), httpOptions).pipe(
       tap(post => console.log('All Post fetched!'))
+    );
+  }
+
+  askQuestionAnswer(token) {
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + this.token
+      })
+    };
+    return this.http.get(environment.wordpress.api_url + "wp-json/wp/v2/askmebuddy/email?email=bhupendrasingh@acmeintech.in").pipe(
+      tap(post => console.log('All Answer fetched!'))
     );
   }
 

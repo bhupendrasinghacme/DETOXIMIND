@@ -2,54 +2,81 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { PostService } from '../services/post.service';
 import { LoadingController } from '@ionic/angular';
+import { element } from 'protractor';
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
-  posts:any;
+  posts: any;
+  Categories_data: any;
+  category_id: any;
   constructor(
     private router: Router,
-    private post :PostService,
+    private post: PostService,
     public loadingController: LoadingController
   ) {
-   this.loadInitData();
+    this.getAllCategory();
   }
-
-  async loadInitData(){
-    const loading = await this.loadingController.create({
-      cssClass: 'my-custom-class',
-      message: 'Please wait...',
-      spinner:'lines-sharp'
-    });
-    await loading.present();
-  this.post.getPostData(1).subscribe(
-    async (res) => {
-      this.posts = res;
-      console.log(this.posts)
-      await loading.dismiss();
-    },
-    async (err) => {
-  console.log(err);
-  await loading.dismiss();
-    }
-  );
-  }
-
 
   loadData(event: any) {
     const page = (Math.ceil(this.posts.length / 10)) + 1;
-    this.post.getPostData(page).subscribe(
+    this.post.getPostDataPage(this.category_id, page).subscribe(
       async (newPagePosts) => {
         this.posts.push(...newPagePosts);
         event.target.complete();
-        // console.log(this.posts)
       },
-    async (err) => {
-      event.target.disabled = true;
-  console.log(err);
+      async (err) => {
+        event.target.disabled = true;
+        console.log(err);
+      });
+  }
+
+
+  async getAllCategory() {
+    const loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: 'Please wait...',
+      spinner: 'lines-sharp'
     });
+    await loading.present();
+    this.post.getAllCategories().subscribe(async item => {
+      this.Categories_data = item;
+      await loading.dismiss();
+      setTimeout(() => {
+        document.getElementById("default_clicked").click();
+      }, 100)
+    },
+      async (err) => {
+        console.log(err);
+        await loading.dismiss();
+      })
+
+  }
+
+  async getPostDataCat_id(id) {
+    document.querySelectorAll('.inactive').forEach(element => {
+      element.classList.remove('active');
+    })
+    document.querySelector('.active_' + id).classList.add('active');
+
+    const loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: 'Please wait...',
+      spinner: 'lines-sharp'
+    });
+    await loading.present();
+    this.category_id = id;
+    this.post.getPostDataPage(id, 1).subscribe(async data => {
+      this.posts = data;
+      await loading.dismiss();
+
+    },
+      async (err) => {
+        console.log(err);
+        await loading.dismiss();
+      })
   }
 
 }

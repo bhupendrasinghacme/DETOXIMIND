@@ -28,6 +28,13 @@ export class Tab2Page {
     })
     this.ionicForm = this.fb.group({
       questionInput: ['', [Validators.required, Validators.minLength(10)]]
+    });
+    this.fetchAnswerData();
+  }
+
+  fetchAnswerData() {
+    this.postService.askQuestionAnswer(this.adminToken).subscribe(item => {
+      console.log(item);
     })
   }
 

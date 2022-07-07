@@ -2,8 +2,19 @@ ion-toolbar {
     --background: #0F1B41;
     --color: #FFFAEA;
 }
-.text-feedback{
+
+.text-feedback {
     display: flex;
     justify-content: center;
     padding-top: 100%;
-    }
+}
+
+ion-footer {
+    --background: #0F1B41;
+    --color: #FFFAEA;
+}
+
+ion-item {
+    --background: #0F1B41;
+    --color: #FFFAEA;
+}
