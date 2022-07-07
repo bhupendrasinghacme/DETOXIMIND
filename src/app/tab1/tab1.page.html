@@ -12,7 +12,7 @@
   <ion-text *ngIf="home_data">
     <div [innerHTML]="home_data.content.rendered"></div>
   </ion-text>
-  <ion-slides speed="300" pager="true" [options]="slideConfig">
+  <ion-slides speed="300" pager="true" [options]="slideConfig" paginationType="bullets" slidesPerView="1">
     <ion-slide *ngFor="let e of [].constructor(html_data_length);let index_data = index">
       <!-- <ion-card> -->
       <div class="slider_data_append" [innerHTML]="html_data[index_data].outerHTML"></div>

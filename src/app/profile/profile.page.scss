@@ -3,7 +3,7 @@ ion-toolbar {
 }
 
 ion-content {
-    --background: #D3E7FF;
+    --background: #fff;
     --color: #000000;
 
     .upperbody {
@@ -35,9 +35,13 @@ ion-content {
         height: 50px;
         width: 60%;
     }
-
+   ion-button  {
+        background-color: #0F1B41 !important;
+ }
 }
-
+::ng-deep button {
+    background-color: #0F1B41;
+}
 .main-body-profile {
     width: 100%;
     height: 50%;
