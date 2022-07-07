@@ -45,7 +45,6 @@ export class Tab2Page {
     await loading.present();
     this.postService.askQuestionAnswer(this.email).subscribe(async item => {
       this.all_data_rec = item
-      console.log(item);
       await loading.dismiss();
     }, async error => {
       console.log(error);
@@ -60,8 +59,22 @@ export class Tab2Page {
     this.postService.askQuestion(data, this.adminToken).subscribe(item => {
       this.questionMsg = '';
       this.loader = false;
-      this.fetchAnswerData();
-      console.log(item)
+      setTimeout(() => {
+        this.fetchAnswerData();
+      }, 1000)
     })
   }
+  doRefresh(event) {
+    this.postService.askQuestionAnswer(this.email).subscribe(async item => {
+      this.all_data_rec = item;
+      console.log(item);
+      event.target.complete();
+    }, async error => {
+      console.log(error);
+      event.target.complete();
+    })
+
+
+  }
+
 }
