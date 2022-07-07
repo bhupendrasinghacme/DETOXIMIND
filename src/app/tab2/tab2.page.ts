@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { PostService } from '../services/post.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from '../services/authentication.service';
+import { LoadingController } from '@ionic/angular';
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -13,12 +14,14 @@ export class Tab2Page {
   adminToken: any;
   questionMsg: any;
   loader: any = false;
+  all_data_rec: any;
   constructor(
     private fb: FormBuilder,
     private postService: PostService,
-    private authenticationService: AuthenticationService
-
+    private authenticationService: AuthenticationService,
+    public loadingController: LoadingController
   ) {
+    this.fetchAnswerData();
     this.authenticationService.getUserData().then(item => {
       this.email = JSON.parse(item['value']).email;
     })
@@ -29,12 +32,24 @@ export class Tab2Page {
     this.ionicForm = this.fb.group({
       questionInput: ['', [Validators.required, Validators.minLength(10)]]
     });
-    this.fetchAnswerData();
+
   }
 
-  fetchAnswerData() {
-    this.postService.askQuestionAnswer(this.adminToken).subscribe(item => {
+
+  async fetchAnswerData() {
+    const loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: 'Please wait...',
+      spinner: 'lines-sharp'
+    });
+    await loading.present();
+    this.postService.askQuestionAnswer(this.email).subscribe(async item => {
+      this.all_data_rec = item
       console.log(item);
+      await loading.dismiss();
+    }, async error => {
+      console.log(error);
+      await loading.dismiss();
     })
   }
 
@@ -45,6 +60,7 @@ export class Tab2Page {
     this.postService.askQuestion(data, this.adminToken).subscribe(item => {
       this.questionMsg = '';
       this.loader = false;
+      this.fetchAnswerData();
       console.log(item)
     })
   }
