@@ -23,6 +23,9 @@ ion-item {
     padding: 20px;
     background: #fff;
     color: #000;
+    height: 90%;
+    overflow: scroll;
+
 }
 
 .text-feedback_wrap {
@@ -42,10 +45,50 @@ form {
     bottom: 0;
     width: 100%;
     background: #0F1B41;
+    padding: 20px;
+
+    ion-button {
+        --background: #fff !important;
+        // opacity: 1;
+        color: #000;
+        max-width: 157px;
+        margin: 15px auto;
+        --border-radius: 5px;
+        --padding: 20px;
+        --cursor: pointer;
+    }
+
+    :host(.item-fill-none.item-interactive.ion-focus) .item-native,
+    :host(.item-fill-none.item-interactive.item-has-focus) .item-native,
+    :host(.item-fill-none.item-interactive.ion-touched.ion-invalid) .item-native {
+        border-bottom: unset;
+    }
+
+    ion-label {
+        text-transform: uppercase;
+        padding-right: 10px;
+    }
 }
 
 ::ng-deep textarea.native-textarea.sc-ion-textarea-md {
     border: 2px solid #fff;
     padding: 10px;
     border-radius: 5px;
+}
+
+
+ion-content {
+    .text-feedback p {
+        text-transform: capitalize;
+
+        strong {
+            padding-right: 10px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+::ng-deep item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
 }
