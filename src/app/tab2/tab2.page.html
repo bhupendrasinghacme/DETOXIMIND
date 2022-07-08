@@ -26,10 +26,9 @@
 </ion-content>
 <ion-footer>
   <form [formGroup]="ionicForm" (ngSubmit)="submitForm()">
-    <ion-item lines="none">
-      <ion-label>Question:</ion-label>
-      <br>
-      <ion-textarea placeholder="Enter Your Question" type="text" [(ngModel)]="questionMsg"
+    <ion-label>Question:</ion-label>
+    <ion-item lines="full" fill="outline">
+      <ion-textarea  placeholder="Enter Your Question" type="text" [(ngModel)]="questionMsg"
         formControlName="questionInput" autofocus="true">
       </ion-textarea>
     </ion-item>

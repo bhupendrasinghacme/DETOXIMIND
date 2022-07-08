@@ -8,10 +8,16 @@ ion-content.ios.overscroll.content-ltr.hydrated {
 }
 
 ::ng-deep .message {
-  padding: 20px 30px;
+  padding: 10px 30px;
   border-radius: 39px;
   margin-bottom: 4px;
   white-space: pre-wrap;
+  b {
+    text-transform: uppercase;
+  }
+  span {
+    text-transform: capitalize;
+  }
 }
 
 ::ng-deep .my-message {
