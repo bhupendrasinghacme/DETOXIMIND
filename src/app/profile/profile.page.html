@@ -30,18 +30,18 @@
       <div class="close_btn" (click)="closeEditor()">X</div>
       <h1>Edit Profile</h1>
       <form [formGroup]="updateForm" (ngSubmit)="UpadateUser()">
-        <ion-item class="cnp_wrapper">
+        <ion-item class="cnp_wrapper" fill="outline">
           <ion-label position="floating">Email:-</ion-label>
           <ion-input id="email" type="email" placeholder="Enter Email" formControlName="email" [(ngModel)]="email">
           </ion-input>
         </ion-item>
-        <ion-item class="cnp_wrapper">
+        <ion-item class="cnp_wrapper" fill="outline">
           <ion-label position="floating">First Name:-</ion-label>
           <ion-input id="first_name" type="text" placeholder="Enter First Name" formControlName="first_name"
             [(ngModel)]="firstname">
           </ion-input>
         </ion-item>
-        <ion-item class="cnp_wrapper">
+        <ion-item class="cnp_wrapper" fill="outline">
           <ion-label position="floating">Last Name:-</ion-label>
           <ion-input id="last_name" type="text" placeholder="Enter Last Name" formControlName="last_name"
             [(ngModel)]="lastname"></ion-input>
@@ -61,17 +61,17 @@
       <div class="close_btn" (click)="closeEditor()">X</div>
       <h1>Change Password</h1>
       <form [formGroup]="changeData" (ngSubmit)="chengePassword()">
-        <ion-item class="op_wrapper">
+        <ion-item class="op_wrapper" fill="outline">
           <ion-label position="floating">Old Password:-</ion-label>
           <ion-input id="old_password" type="text" placeholder="Enter New Password" formControlName="old_password">
           </ion-input>
 
           <div *ngIf="(old_password.dirty || old_password.touched) && old_password.errors" class="errors">
             <span *ngIf="old_password.errors?.required">Old Password is required</span>
-            <!-- <span *ngIf="old_password.errors?.minlength">New Password needs to be 6 characters</span> -->
+         
           </div>
         </ion-item>
-        <ion-item class="np_wrapper">
+        <ion-item class="np_wrapper" fill="outline"> 
           <ion-label position="floating">New Password:-</ion-label>
           <ion-input id="new_password" type="password" placeholder="Enter New Password" formControlName="new_password">
           </ion-input>
@@ -81,7 +81,7 @@
           </div>
 
         </ion-item>
-        <ion-item class="cnp_wrapper">
+        <ion-item class="cnp_wrapper" fill="outline">
           <ion-label position="floating">Confirm New Password:-</ion-label>
           <ion-input id="cnp_password" type="password" placeholder="Enter Confirm Password"
             formControlName="confirm_password"></ion-input>

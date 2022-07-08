@@ -8,6 +8,10 @@ ion-toolbar {
         margin: 0 auto;
         display: block;
     }
+    ion-buttons {
+        position: absolute;
+        right: 0;
+    }
 
 }
 
@@ -190,7 +194,7 @@ h3 {
         text-transform: uppercase;
         letter-spacing: 2.6px;
         color: #FFFFFF;
-
+        padding-top: 30px;
     }
 }
 
@@ -206,4 +210,14 @@ swiper-pagination  {
 }
 ion-slides {
     padding-bottom: 40px;
+}
+
+::ng-deep ion-tab-bar {
+    --background: #fff;
+    ion-tab-button {
+        --color: #0C1A40;
+    }
+    ion-tab-button.tab-selected {
+    color: #009688;
+    }
 }

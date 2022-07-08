@@ -22,10 +22,12 @@
       <ion-card-content>
         <p [innerHTML]="post.excerpt.rendered"></p>
       </ion-card-content>
-      <ion-item class="ion-activated" detail lines="none">
+      <!-- detail -->
+      <ion-item class="ion-activated"  lines="none">
         <ion-label *ngIf="!post.modified">{{post.date | date}}</ion-label>
         <ion-label *ngIf="post.modified">{{post.modified | date}}</ion-label>
         <ion-label class="read-more-label">Read More</ion-label>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
       </ion-item>
     </ion-card>
     <ion-infinite-scroll (ionInfinite)="loadData($event)">

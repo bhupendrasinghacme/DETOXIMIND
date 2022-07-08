@@ -1,1 +1,10 @@
 
+::ng-deep ion-tab-bar {
+    --background: #fff;
+    ion-tab-button {
+        --color: #0C1A40;
+    }
+    ion-tab-button.tab-selected {
+    color: #009688;
+    }
+}
