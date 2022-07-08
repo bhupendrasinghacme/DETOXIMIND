@@ -35,11 +35,22 @@ ion-toolbar {
 ::ng-deep app-formstory {
     form {
     background: #0C1A40;
+  
     ion-label {
         color: #fff;
     }
-    ion-input {
-        border: 1px solid #fff;
+   
+    ion-item {
+        --background: transparent;
+    color: #fff;
+    margin: 15px;
+    &:hover ion-label {
+        --color: #fff !important;
+    }
+    }
+    ion-list  {
+        background: transparent !important;
+    color: #fff;
     }
   }
   .item-native {

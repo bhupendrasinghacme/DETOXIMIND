@@ -1,22 +1,22 @@
 <form [formGroup]="ionicForm" (ngSubmit)="submitForm()">
-  <ion-item lines="full">
+  <ion-item lines="full" fill="outline">
     <ion-label position="floating">Name *</ion-label>
     <ion-input type="text" formControlName="name" required></ion-input>
   </ion-item>
-  <ion-item lines="full">
+  <ion-item lines="full" fill="outline">
     <ion-label position="floating">Email *</ion-label>
     <ion-input type="email" formControlName="email" required></ion-input>
   </ion-item>
   
-  <ion-item lines="full">
+  <ion-item lines="full" fill="outline">
     <ion-label position="floating">School/College</ion-label>
     <ion-input type="text" formControlName="school"></ion-input>
   </ion-item>
-  <ion-item lines="full">
+  <ion-item lines="full" fill="outline">
     <ion-label position="floating">Country</ion-label>
     <ion-input type="text" formControlName="country"></ion-input>
   </ion-item>
-  <ion-item lines="full">
+  <ion-item lines="full" fill="outline">
     <ion-label position="floating">Your story (Max: 1500 words)</ion-label>
     <ion-textarea type="text"></ion-textarea>
   </ion-item>

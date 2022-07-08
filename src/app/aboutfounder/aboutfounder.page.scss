@@ -31,3 +31,14 @@ ion-toolbar {
         text-transform: uppercase;
     }
 }
+.social-icon_wrap {
+    text-align: center;
+    ion-icon {
+        font-size: 30px;
+        padding: 10px;
+        cursor: pointer;
+    }
+}
+::ng-deep .elementor-element-121c17e  {
+    display: none;
+}
