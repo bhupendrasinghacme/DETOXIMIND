@@ -26,7 +26,7 @@
 </ion-content>
 <ion-footer>
   <form [formGroup]="ionicForm" (ngSubmit)="submitForm()">
-    <ion-item>
+    <ion-item lines="none">
       <ion-label>Question:</ion-label>
       <br>
       <ion-textarea placeholder="Enter Your Question" type="text" [(ngModel)]="questionMsg"
@@ -34,7 +34,7 @@
       </ion-textarea>
     </ion-item>
 
-    <ion-button expand="block" color="secondary" type="submit" [disabled]="!ionicForm.valid">Ask Question
+    <ion-button expand="block" type="submit" [disabled]="!ionicForm.valid">Ask Question
       <ion-spinner name="lines-small" *ngIf="loader"></ion-spinner>
     </ion-button>
   </form>
