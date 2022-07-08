@@ -18,6 +18,7 @@ ion-item {
     --background: #0F1B41;
     --color: #FFFAEA;
 }
+
 .text-feedback {
     padding: 20px;
     background: #fff;
@@ -25,9 +26,11 @@ ion-item {
     height: 300px;
     overflow-y: scroll;
 }
+
 .text-feedback_wrap {
     border-bottom: 1px solid #ccc;
 }
+
 ion-button[ng-reflect-type="submit"] {
     --background: #0F1B41;
     margin: 0;
@@ -35,6 +38,7 @@ ion-button[ng-reflect-type="submit"] {
     --ion-color-shade: #0F1B41 !important;
     --ion-color-tint: #0F1B41 !important;
 }
+
 form {
     position: fixed;
     bottom: 0;
@@ -44,24 +48,27 @@ form {
 
     ion-button {
         --background: #fff !important;
-    // opacity: 1;
-    color: #000;
-    max-width: 157px;
-    margin: 15px auto;
-    --border-radius: 5px;
-    --padding: 20px;
-    --cursor: pointer;
+        // opacity: 1;
+        color: #000;
+        max-width: 157px;
+        margin: 15px auto;
+        --border-radius: 5px;
+        --padding: 20px;
+        --cursor: pointer;
     }
+
     :host(.item-fill-none.item-interactive.ion-focus) .item-native,
-     :host(.item-fill-none.item-interactive.item-has-focus) .item-native, 
+    :host(.item-fill-none.item-interactive.item-has-focus) .item-native,
     :host(.item-fill-none.item-interactive.ion-touched.ion-invalid) .item-native {
         border-bottom: unset;
     }
+
     ion-label {
         text-transform: uppercase;
         padding-right: 10px;
     }
 }
+
 ::ng-deep textarea.native-textarea.sc-ion-textarea-md {
     border: 2px solid #fff;
     padding: 10px;
@@ -70,8 +77,8 @@ form {
 
 
 ion-content {
-  .text-feedback  p {
-        text-transform:capitalize;
+    .text-feedback p {
+        text-transform: capitalize;
 
         strong {
             padding-right: 10px;
@@ -79,4 +86,8 @@ ion-content {
         }
     }
 }
-::ng-deep item-inner { border-bottom-color: transparent !important; box-shadow: none !important; }
+
+::ng-deep item-inner {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+}
