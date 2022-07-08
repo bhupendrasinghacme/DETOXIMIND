@@ -18,14 +18,17 @@ ion-item {
     --background: #0F1B41;
     --color: #FFFAEA;
 }
+
 .text-feedback {
     padding: 20px;
     background: #fff;
     color: #000;
 }
+
 .text-feedback_wrap {
     border-bottom: 1px solid #ccc;
 }
+
 ion-button[ng-reflect-type="submit"] {
     --background: #0F1B41;
     margin: 0;
@@ -33,12 +36,14 @@ ion-button[ng-reflect-type="submit"] {
     --ion-color-shade: #0F1B41 !important;
     --ion-color-tint: #0F1B41 !important;
 }
+
 form {
     position: fixed;
     bottom: 0;
     width: 100%;
     background: #0F1B41;
 }
+
 ::ng-deep textarea.native-textarea.sc-ion-textarea-md {
     border: 2px solid #fff;
     padding: 10px;

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -16,8 +16,8 @@ import { FormstoryComponent } from '../components/formstory/formstory.component'
     IonicModule,
     WhatsisyourstoryPageRoutingModule,
     ReactiveFormsModule
-    
+
   ],
-  declarations: [WhatsisyourstoryPage,FormstoryComponent]
+  declarations: [WhatsisyourstoryPage, FormstoryComponent]
 })
-export class WhatsisyourstoryPageModule {}
+export class WhatsisyourstoryPageModule { }

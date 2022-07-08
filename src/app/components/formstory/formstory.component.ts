@@ -7,13 +7,15 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 })
 export class FormstoryComponent implements OnInit {
   ionicForm: FormGroup;
-  isSubmitted = false;
+  isSubmitted: boolean = false;
+  isChecked1: boolean = false;
+  isChecked2: boolean = false;
   constructor(public formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.ionicForm = this.formBuilder.group({
       name: ['', [Validators.required]],
-      email: ['', [Validators.required,Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
+      email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
       school: [''],
       country: [''],
       publish_name: [''],
