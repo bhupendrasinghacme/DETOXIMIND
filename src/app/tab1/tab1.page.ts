@@ -14,7 +14,9 @@ export class Tab1Page {
   html_data_length: any = 0;
   slides = [];
   slideConfig = {
-    slidesToShow: 1, autoplay: true, loop: true,
+    slidesToShow: 1,
+     autoplay: true,
+      loop: true,
     autoHeight: true
   };
   html_data: any;

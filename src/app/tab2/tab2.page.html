@@ -11,7 +11,7 @@
     <!-- <p [innerHTML]="contactus_data.content.rendered"></p> -->
   </ion-text>
   <div class="text-feedback">
-    <div *ngFor="let item of all_data_rec">
+    <div *ngFor="let item of all_data_rec" class="text-feedback_wrap">
       <p><strong>Question:</strong>{{item.user_message}}</p>
       <p><strong>Answer:</strong><span *ngIf="item.admin_message != null">{{item.admin_message}}</span></p>
     </div>
@@ -20,9 +20,10 @@
 <ion-footer>
   <form [formGroup]="ionicForm" (ngSubmit)="submitForm()">
     <ion-item>
-      <ion-label position="floating">Question:-</ion-label>
+      <ion-label>Question:</ion-label>
+      <br>
       <ion-textarea placeholder="Enter Your Question" type="text" [(ngModel)]="questionMsg"
-        formControlName="questionInput">
+        formControlName="questionInput" autofocus="true">
       </ion-textarea>
     </ion-item>
 

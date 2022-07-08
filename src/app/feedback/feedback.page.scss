@@ -23,3 +23,16 @@ padding-top: 100%;
 .main_cls h5 {
     font-weight: 900;
 }
+::ng-deep form ion-item
+{
+    --background: transparent;
+    --color: #fff;
+    border: 1px solid #fff;
+    margin: 10px;
+}
+::ng-deep .list-md  {
+    background: transparent;
+}
+::ng-deep ion-label {
+    color: #fff;
+}

@@ -8,26 +8,30 @@ ion-content.ios.overscroll.content-ltr.hydrated {
 }
 
 ::ng-deep .message {
-  padding: 10px;
-  border-radius: 10px;
+  padding: 20px 30px;
+  border-radius: 39px;
   margin-bottom: 4px;
   white-space: pre-wrap;
 }
 
 ::ng-deep .my-message {
-  background: #0F1B41;
+  background: #009688;
   color: #fff;
+  border-top-right-radius: 0.17rem;
+  margin: 10px;
 }
 
 ::ng-deep .other-message {
-  background: palevioletred;
-  color: #fff;
+  background: #fff;
+  color: #000;
+  border-top-left-radius: 0.17rem;
 }
 
 ::ng-deep .createdAt {
-  color: #dfdfdf;
+  color: #000;
   float: right;
   font-size: small;
+  line-height: 10px;
 }
 
 ::ng-deep .inputBox {
@@ -45,4 +49,7 @@ ion-content.ios.overscroll.content-ltr.hydrated {
 
 ::ng-deep textarea.native-textarea.sc-ion-textarea-ios {
   padding-left: 15px;
+}
+::ng-deep .chat-wrapper {
+  --padding: 40px;
 }

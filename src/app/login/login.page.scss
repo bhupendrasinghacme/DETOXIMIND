@@ -1,11 +1,8 @@
 ion-content {
-    --padding-top: 20%;
+    --padding-top: 50%;
     --padding-start: 10%;
     --padding-end: 10%;
-    // --background: linear-gradient(180deg,  #696eff, #f8acff);
-    --background: linear-gradient(180deg,  #0F1B41, #0081ca);
-    // url('https://images.unsplash.com/photo-1536431311719-398b6704d4cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80') 0 0/100% 100% no-repeat;
-    .login-title{
+     .login-title{
         color:#000;
         font-size: 20px;
         text-align: center;
@@ -41,4 +38,13 @@ form{
         margin: 0 auto;
        display: block;
     }
+}
+ion-input input:-internal-autofill-selected {
+--background: transparent !important;
+}
+ion-button[type="submit"] {
+    --background: #0F1B41;
+}
+ion-button[type="button"] {
+    color: #0F1B41;
 }

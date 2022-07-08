@@ -10,7 +10,7 @@
     <h5 class="login-title">Sign into your account</h5>
     <div class="input-group">
       <ion-item>
-        <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+        <ion-input type="email" placeholder="Email" formControlName="email" ></ion-input>
       </ion-item>
       <div *ngIf="(email.dirty || email.touched) && email.errors" class="errors">
         <span *ngIf="email.errors?.required">Email is required</span>
