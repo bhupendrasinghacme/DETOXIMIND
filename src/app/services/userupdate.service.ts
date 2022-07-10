@@ -52,18 +52,35 @@ export class UserupdateService {
     );
   }
 
-  uploadMedia(data, token) {
+  uploadMedia(data, base64, token) {
     this.getToken();
 
     let httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + token,
         'Content-Disposition': 'attachment; filename="file.jpg"',
+        'Content-Type': 'multipart/form-data',
+        'Cache-Control': 'no-cache',
       })
     };
 
-    return this.http.post(environment.wordpress.api_url + 'wp-json/wp/v2/media', JSON.stringify(data), httpOptions)
+
+    let formData = new FormData();
+
+    // formData.append('file', {
+    //   base64: base64,
+    //   name: `photo_${data.imageName}.${data.format}`,
+    //   type: `image/${data.format}`,
+    // });
+
+
+    // formData.append('file', {
+    //   base64,
+    //   name: `photo_${data.imageName}.${data.format}`,
+    //   type: `image/${data.format}`,
+    // });
+    return data;
+    // return this.http.post(environment.wordpress.api_url + 'wp-json/wp/v2/media', JSON.stringify(formData), httpOptions)
   }
 
 }

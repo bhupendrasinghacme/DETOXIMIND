@@ -8,7 +8,7 @@
     </ion-toolbar>
   </div>
   <div class="profil-dp-wrapper">
-    <img src="../../assets/profile..png" alt="Profile">
+    <img [src]="imageUrl" alt="Profile">
   </div>
   <!-- <ion-item class="cnp_wrapper">
     <ion-input id="image" type="file" [(ngModel)]="imageData" (change)="uploadFile($event)"></ion-input>
@@ -114,4 +114,10 @@
       </ion-card-content>
       </ion-card>
   </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <!-- <input type="file" #fileInput (change)="uploadFile($event)" hidden="true" accept="image/*" /> -->
+    <ion-fab-button (click)="selectImageSource()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
