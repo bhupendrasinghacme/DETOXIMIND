@@ -14,9 +14,12 @@
     <ion-input id="image" type="file" [(ngModel)]="imageData" (change)="uploadFile($event)"></ion-input>
   </ion-item> -->
   <div class="main-body-profile">
-    <div class="card" *ngIf="profile_view">
-      <h1>Profile</h1>
-      <ion-label>{{email}}</ion-label>
+    <ion-card class="card" *ngIf="profile_view">
+      <ion-card-header>
+        <ion-card-title>Profile</ion-card-title>
+        <ion-card-subtitle>{{email}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
       <div class="button-wrapper">
         <div class="edit-pro-btn-wrapper">
           <ion-button (click)="editForm()">Edit</ion-button>
@@ -25,10 +28,16 @@
           <ion-button (click)="changeForm()">Change Password</ion-button>
         </div>
       </div>
-    </div>
-    <div class="card" *ngIf="edit_form">
-      <div class="close_btn" (click)="closeEditor()">X</div>
-      <h1>Edit Profile</h1>
+      </ion-card-content>
+      </ion-card>
+      <ion-card class="card" *ngIf="edit_form">
+        <ion-card-header>
+          <div class="close_btn" (click)="closeEditor()">
+            <ion-icon name="close-outline"></ion-icon>
+          </div>
+          <ion-card-title>Edit Profile</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
       <form [formGroup]="updateForm" (ngSubmit)="UpadateUser()">
         <ion-item class="cnp_wrapper" fill="outline">
           <ion-label position="floating">Email:-</ion-label>
@@ -56,10 +65,17 @@
           </div>
         </div>
       </form>
-    </div>
-    <div class="card" *ngIf="change_form">
-      <div class="close_btn" (click)="closeEditor()">X</div>
-      <h1>Change Password</h1>
+      </ion-card-content>
+      </ion-card>
+      <ion-card class="card" *ngIf="change_form">
+        <ion-card-header>
+          <div class="close_btn" (click)="closeEditor()">
+            <ion-icon name="close-outline"></ion-icon>
+          </div>
+          <ion-card-title>Change Password</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+
       <form [formGroup]="changeData" (ngSubmit)="chengePassword()">
         <ion-item class="op_wrapper" fill="outline">
           <ion-label position="floating">Old Password:-</ion-label>
@@ -95,6 +111,7 @@
           <ion-button type="submit" [disabled]="!changeData.valid">Change Password</ion-button>
         </div>
       </form>
-    </div>
+      </ion-card-content>
+      </ion-card>
   </div>
 </ion-content>

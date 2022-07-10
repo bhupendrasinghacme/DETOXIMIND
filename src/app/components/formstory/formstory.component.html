@@ -23,7 +23,7 @@
   <!-- Checkboxes -->
   <ion-list lines="full">
     <ion-list-header>
-      <ion-label>Would you like to publish your name or go anonymous? *</ion-label>
+      <ion-label class="suggestion_text">Would you like to publish your name or go anonymous? *</ion-label>
     </ion-list-header>
     <ion-item>
       <ion-label>Publish my name</ion-label>
@@ -34,7 +34,7 @@
       <ion-checkbox formControlName="go_anonymou" [(ngModel)]="isChecked2"></ion-checkbox>
     </ion-item>
   </ion-list>
-  <ion-row>
+  <ion-row class="sub_btn">
     <ion-col>
       <ion-button type="submit" color="light" [disabled]="!ionicForm.valid" expand="block">Send</ion-button>
     </ion-col>

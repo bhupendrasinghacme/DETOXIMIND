@@ -7,17 +7,30 @@ ion-toolbar {
 }
 
 
+::ng-deep .elementor-element.elementor-element-9bffa8d.elementor-widget.elementor-widget-image {
+    margin-bottom: 30px;
+}
+
+::ng-deep .main_div h1 {
+    text-align: center;
+    margin: 0 0 40px;
+}
 ::ng-deep .your_story-section {
    
     h2 {
-        font-size: 20px;
+        font-size: 24px;
         color: #fff;
         text-align: center;
+        margin: 0 0 20px;
+            line-height: 32px;
+            font-weight: 700;
     }
-    .story-ques-wrap  p {
+  .story-ques-wrap p {
         color: #fff;
         font-size: 15px;
-        margin-bottom: 20px;
+        margin: 0 0 20px;
+            text-align: center;
+            line-height: 24px;
     }
     .elementor-container  {
         padding: 10px;
