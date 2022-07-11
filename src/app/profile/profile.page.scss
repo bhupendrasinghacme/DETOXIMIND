@@ -71,8 +71,11 @@ ion-card {
     
     ::ng-deep ion-card-title.ion-inherit-color.md.hydrated {
         width: 90%;
+        color: #fff;
 }
-
+::ng-deep ion-card-subtitle {
+    color: #fff;
+}
 .errors {
     font-size: 10px;
     color: red;
