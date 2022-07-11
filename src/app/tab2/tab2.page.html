@@ -14,10 +14,10 @@
     </ion-refresher-content>
   </ion-refresher>
 
-  <ion-text *ngIf="contactus_data">
-    <!-- <p [innerHTML]="contactus_data.content.rendered"></p> -->
-  </ion-text>
-  <div class="text-feedback">
+  <!-- <ion-text *ngIf="contactus_data">
+                <p [innerHTML]="contactus_data.content.rendered"></p> -->
+  <!-- </ion-text> -->
+  <div class="text-feedback" *ngIf="all_data_rec">
     <div *ngFor="let item of all_data_rec" class="text-feedback_wrap">
       <p><strong>Question:</strong>{{item.user_message}}</p>
       <p><strong>Answer:</strong><span *ngIf="item.admin_message != null">{{item.admin_message}}</span></p>

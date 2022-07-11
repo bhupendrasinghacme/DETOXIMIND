@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+// import { EmailComposerOptions } from '@awesome-cordova-plugins/email-composer';
+import { EmailComposer, EmailComposerOptions } from '@awesome-cordova-plugins/email-composer/ngx'
+
 @Component({
   selector: 'app-formstory',
   templateUrl: './formstory.component.html',
@@ -10,7 +13,10 @@ export class FormstoryComponent implements OnInit {
   isSubmitted: boolean = false;
   isChecked1: boolean = false;
   isChecked2: boolean = false;
-  constructor(public formBuilder: FormBuilder) { }
+  constructor(
+    private emailComposer: EmailComposer,
+    public formBuilder: FormBuilder,
+  ) { }
 
   ngOnInit() {
     this.ionicForm = this.formBuilder.group({
@@ -27,10 +33,20 @@ export class FormstoryComponent implements OnInit {
     this.isSubmitted = true;
     if (!this.ionicForm.valid) {
       console.log('Please provide all the required values!')
+      this.openEmail();
       return false;
     } else {
       console.log(this.ionicForm.value)
     }
+  }
+
+  async openEmail() {
+    const email: EmailComposerOptions = {
+      to: 'bhupendra.221singh@gmail.com',
+      subject: 'fist send email',
+      body: 'he i am bhupendra'
+    }
+    await this.emailComposer.open(email);
   }
 
 }

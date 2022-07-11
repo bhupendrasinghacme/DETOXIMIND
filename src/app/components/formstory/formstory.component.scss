@@ -1,0 +1,28 @@
+ion-row.sub_btn.md.hydrated {
+    margin-bottom: 20px !important;
+}
+
+::ng-deep app-formstory form ion-item {
+    --background: transparent;
+    color: #fff;
+    margin: 15px;
+    line-height: 20px;
+}
+
+::ng-deep ion-item.ion-untouched.ion-pristine.ion-valid.item.md.item-fill-none.in-list.ion-activatable.ion-focusable.hydrated.item-label {
+    margin: 0px;
+}
+
+::ng-deep ion-checkbox.ng-untouched.ng-pristine.ng-valid.ion-untouched.ion-pristine.ion-valid.md.in-item.interactive.hydrated {
+    margin: 0px;
+}
+
+::ng-deep ion-label#ion-cb-0-lbl {
+    margin: 0 !important;
+}
+
+.suggestion_text {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 20px 0;
+}
