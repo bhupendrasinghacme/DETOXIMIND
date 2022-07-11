@@ -28,25 +28,32 @@ ion-toolbar {
 }
 
 .active {
-    background: #7f9395 !important;
+    background: #fff !important;
+    color: #000;
+    font-weight: 500;
 }
+
 ion-card {
     --background: #fff;
+
     ion-card-title {
         font-weight: 600;
         color: #000;
     }
 }
-::ng-deep ion-card   ion-icon {
+
+::ng-deep ion-card ion-icon {
     color: #fff;
 }
 
 ::ng-deep ion-tab-bar {
     --background: #fff;
+
     ion-tab-button {
         --color: #0C1A40;
     }
+
     ion-tab-button.tab-selected {
-    color: #009688;
+        color: #009688;
     }
 }

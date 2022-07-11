@@ -1,9 +1,22 @@
 ion-content {
-    --background: #0081ca;
+    --background: #0F1B41;
 }
- 
+
 ion-slides {
     height: 100%;
     --bullet-background-active: #fff;
     --bullet-background: #000;
+}
+
+.front-page-wrap .swiper-slide img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    max-height: 100%;
+}
+
+.front-page-wrap p {
+    max-width: 350px;
+    width: 100%;
+    margin: 0 auto;
 }

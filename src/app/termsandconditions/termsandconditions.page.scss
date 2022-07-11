@@ -2,13 +2,20 @@ ion-toolbar {
     --background: #0F1B41;
     --color: #FFFAEA;
 }
+
 ::ng-deep .elementor-element-b4a64aa {
     padding: 10px;
-   ul:first-child {
-    padding-left: 0;
-    list-style-type: none;
-   }
+
+    ul:first-child {
+        padding-left: 0;
+        list-style-type: none;
+    }
 }
+
 ::ng-deep ion-back-button {
-color: #fff;
-} 
+    color: #fff;
+}
+
+.elementor-element-cc095f4 p {
+    text-align: left;
+}
