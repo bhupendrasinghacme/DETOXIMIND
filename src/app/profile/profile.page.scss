@@ -35,13 +35,16 @@ ion-content {
         height: 50px;
         width: 60%;
     }
-//    ion-button  {
-//         --background: #0F1B41 !important;
-//  }
+
+    //    ion-button  {
+    //         --background: #0F1B41 !important;
+    //  }
 }
+
 ::ng-deep button {
     background-color: #0F1B41;
 }
+
 .main-body-profile {
     width: 100%;
     height: 50%;
@@ -63,14 +66,14 @@ ion-card {
 
 .close_btn {
     font-size: 24px;
-        position: absolute;
-        top: 10px;
-        right: 17px;
-        opacity: 1;
-    }
-    
-    ::ng-deep ion-card-title.ion-inherit-color.md.hydrated {
-        width: 90%;
+    position: absolute;
+    top: 10px;
+    right: 17px;
+    opacity: 1;
+}
+
+::ng-deep ion-card-title.ion-inherit-color.md.hydrated {
+    width: 90%;
 }
 
 .errors {
@@ -82,8 +85,18 @@ ion-card {
     padding-top: 20px;
     text-align: center;
 }
+
 ion-card ion-item {
     --background: #0F1B41;
     margin: 20px 0;
     line-height: 20px;
+}
+
+::ng-deep ion-card-title.ion-inherit-color.md.hydrated {
+    width: 90%;
+    color: #fff;
+}
+
+ion-input {
+    --color: #fff;
 }
