@@ -87,7 +87,7 @@ ion-card {
 }
 
 ion-card ion-item {
-    --background: #0F1B41;
+    // --background: #0F1B41;
     margin: 20px 0;
     line-height: 20px;
 }
@@ -97,6 +97,23 @@ ion-card ion-item {
     color: #fff;
 }
 
-ion-input {
-    --color: #fff;
+// ion-input {
+//     --color: #fff;
+// }
+
+::ng-deep ion-card-subtitle {
+    color: #fff;
+}
+
+.button-wrapper,
+.change-password-wrapper {
+    ion-button {
+        --background: #fff;
+        color: #000000;
+    }
+}
+
+.main-body-profile ion-icon {
+    color: #fff;
+    font-weight: 900;
 }
